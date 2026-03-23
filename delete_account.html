@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delete Account Request</title>
-  <meta name="description" content="Submit a request to delete your account and associated personal data." />
+  <title>Account Deletion Request - TU</title>
+  <meta name="description" content="Submit a request to delete your TU account and associated personal data." />
   <style>
     :root {
       --bg: #0f172a;
@@ -265,17 +265,6 @@
       line-height: 1.7;
     }
 
-    .footer-note {
-      margin-top: 26px;
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
       font-size: 0.95em;
@@ -298,41 +287,36 @@
   <main class="wrap">
     <section class="hero">
       <div class="panel">
-        <span class="badge">Delete Account Request</span>
-        <h1>Request account deletion with clarity and confidence.</h1>
+        <span class="badge">Privacy Support</span>
+        <h1>Account Deletion Request</h1>
         <p class="lead">
-          Use this page to request deletion of your account and associated personal data for <strong>TU App</strong>.
-          After you submit the form, our team will review the request and process it according to our privacy policy and data retention obligations.
+          Use this page to request the permanent deletion of your account and associated personal data for the <strong>TU</strong> app. 
+          Once submitted, our team will process your request in accordance with our privacy policy.
         </p>
 
         <div class="info-grid">
           <div class="info-box">
-            <strong>What to provide</strong>
-            <span>Your account email and a short note that helps us identify the correct account.</span>
+            <strong>Verification</strong>
+            <span>Provide your account email so we can identify the correct data to remove.</span>
           </div>
           <div class="info-box">
-            <strong>Processing</strong>
-            <span>We may contact you to verify ownership before permanently deleting the account.</span>
+            <strong>Timeline</strong>
+            <span>Requests are typically processed within 30 days of submission.</span>
           </div>
           <div class="info-box">
-            <strong>Support</strong>
-            <span>Questions can be sent to <code>support@yourdomain.com</code>.</span>
+            <strong>Direct Contact</strong>
+            <span>You can also reach us directly at <code>breath.in.out.on@gmail.com</code>.</span>
           </div>
-        </div>
-
-        <div class="footer-note">
-          Replace the app name, support email, and any policy wording in this file before publishing.
-          This page is ready to host on Netlify, GitHub Pages, or any static web server.
         </div>
       </div>
 
       <aside class="card">
         <h2>Submit your request</h2>
-        <p class="sub">Please fill in the form below. Required fields are marked automatically by the browser.</p>
+        <p class="sub">All fields are required to ensure we process the correct account.</p>
 
         <form id="deleteForm" action="https://formspree.io/f/xzdvnyae" method="POST">
-          <input type="hidden" name="_subject" value="Delete Account Request - TU App" />
-          <input type="hidden" name="request_type" value="Delete Account" />
+          <input type="hidden" name="_subject" value="Account Deletion Request - TU App" />
+          <input type="hidden" name="app_name" value="TU" />
 
           <div class="field">
             <label for="email">Account email</label>
@@ -341,44 +325,41 @@
 
           <div class="field">
             <label for="fullName">Full name</label>
-            <input id="fullName" type="text" name="full_name" placeholder="Your full name" />
+            <input id="fullName" type="text" name="full_name" placeholder="Your registered name" required />
           </div>
 
           <div class="field">
             <label for="platform">Platform</label>
-            <select id="platform" name="platform">
-              <option value="">Select platform</option>
-              <option>iOS</option>
-              <option>Android</option>
-              <option>macOS</option>
-              <option>Web</option>
-              <option>Other</option>
+            <select id="platform" name="platform" required>
+              <option value="">Select your platform</option>
+              <option value="Android">Android</option>
+              <option value="iOS">iOS</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Please confirm that you want your account deleted, and add any details that help us identify the account." required></textarea>
+            <label for="message">Reason (Optional)</label>
+            <textarea id="message" name="message" placeholder="Optional: Let us know why you are leaving so we can improve TU."></textarea>
           </div>
 
           <div class="check">
             <input id="confirm" type="checkbox" name="confirm_deletion" value="Yes" required />
             <label for="confirm">
-              I confirm that I am the account owner or an authorized person, and I understand this request may permanently remove account data, subject to legal and operational retention requirements.
+              I understand that deleting my account is permanent and will remove all my personal data from the TU app.
             </label>
           </div>
 
           <div class="actions">
-            <button id="submitBtn" type="submit">Send deletion request</button>
-            <a class="secondary" href="mailto:support@yourdomain.com">Contact support</a>
+            <button id="submitBtn" type="submit">Send Request</button>
+            <a class="secondary" href="mailto:breath.in.out.on@gmail.com">Email Support</a>
           </div>
 
           <div id="status" class="status" role="status" aria-live="polite"></div>
         </form>
 
         <p class="fineprint">
-          Suggested publishing path: host this file publicly and link it from your App Store / Google Play account deletion section.
-          Form submissions are sent through Formspree.
+          This form is powered by Formspree to ensure your request reaches our support team securely.
         </p>
       </aside>
     </section>
@@ -412,9 +393,9 @@
 
         if (response.ok) {
           form.reset();
-          showStatus('success', 'Your delete account request has been sent successfully. We will review it and contact you if verification is needed.');
+          showStatus('success', 'Your request has been sent. We will process your account deletion shortly.');
         } else {
-          let message = 'Something went wrong while sending your request. Please try again or contact support by email.';
+          let message = 'An error occurred. Please try again or email breath.in.out.on@gmail.com.';
           try {
             const data = await response.json();
             if (data && data.errors && data.errors.length) {
@@ -424,10 +405,10 @@
           showStatus('error', message);
         }
       } catch (error) {
-        showStatus('error', 'Network error. Please check your connection and try again.');
+        showStatus('error', 'Network error. Please check your connection.');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send deletion request';
+        submitBtn.textContent = 'Send Request';
       }
     });
   </script>
