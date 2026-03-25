@@ -3,120 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TU — Mindful Companion | Privacy & Terms</title>
+  <title>TU — Mindful Companion | Privacy Policy & Terms</title>
   <style>
     :root {
       --bg-color: #f4f3ef;
       --card-bg: #ffffff;
       --text-main: #333333;
-      --text-muted: #666666;
+      --text-muted: #555555;
       --accent: #4a5d4e;
       --border-color: #e0ded8;
+      --alert: #b33a3a;
     }
     body {
       margin: 0; padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
-      line-height: 1.7;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
     .wrapper {
-      max-width: 900px;
-      margin: 40px auto;
-      background: var(--card-bg);
-      padding: 40px 60px;
-      border-radius: 12px;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+      max-width: 900px; margin: 40px auto; background: var(--card-bg);
+      padding: 40px 50px; border-radius: 12px; box-shadow: 0 4px 25px rgba(0,0,0,0.05);
     }
-    .header {
-      text-align: center;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 25px;
-      margin-bottom: 35px;
-    }
-    .header h1 {
-      font-family: "Georgia", serif;
-      color: var(--accent);
-      font-size: 2.4rem;
-      margin: 0 0 5px 0;
-    }
-    .header p { color: var(--text-muted); margin: 0; }
-    .controls {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 35px;
-    }
+    .header { text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 25px; margin-bottom: 30px; }
+    .header h1 { font-family: "Georgia", serif; color: var(--accent); font-size: 2.2rem; margin: 0 0 5px 0; }
+    .controls { display: flex; justify-content: center; margin-bottom: 30px; }
     select {
-      appearance: none;
-      background-color: var(--bg-color);
-      border: 1px solid var(--border-color);
-      padding: 12px 40px 12px 20px;
-      font-size: 1rem;
-      color: var(--text-main);
-      border-radius: 8px;
-      cursor: pointer;
-      outline: none;
+      appearance: none; background-color: var(--bg-color); border: 1px solid var(--border-color);
+      padding: 12px 40px 12px 20px; font-size: 1rem; color: var(--text-main); border-radius: 8px; cursor: pointer; outline: none;
       background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-      background-repeat: no-repeat;
-      background-position: right 15px top 50%;
-      background-size: 12px auto;
-      transition: all 0.2s ease;
+      background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; transition: all 0.2s ease;
     }
-    select:hover, select:focus { border-color: var(--accent); }
+    select:hover { border-color: var(--accent); }
     .lang-section { display: none; animation: fadeIn 0.4s ease-in-out; }
     .lang-section.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     
-    h2 {
-      font-family: "Georgia", serif;
-      font-weight: 400;
-      font-size: 1.8rem;
-      color: var(--text-main);
-      margin-top: 40px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 10px;
-    }
-    h3 {
-      font-weight: 600;
-      color: var(--accent);
-      font-size: 1.15rem;
-      margin-top: 30px;
-      margin-bottom: 15px;
-    }
+    h2 { font-family: "Georgia", serif; font-size: 1.8rem; color: var(--text-main); margin: 40px 0 20px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+    h3 { font-weight: 600; color: var(--accent); font-size: 1.15rem; margin: 25px 0 10px; }
     p, li { color: var(--text-muted); }
-    .data-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      margin: 20px 0;
-    }
-    .data-card {
-      background: #faf9f6;
-      padding: 18px;
-      border-radius: 10px;
-      border: 1px solid var(--border-color);
-      font-size: 0.95rem;
-    }
-    .data-card strong {
-      color: var(--accent);
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .highlight-box { background: #fdfaf6; border-left: 4px solid var(--accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
+    .highlight-box.alert { border-left-color: var(--alert); background: #fffafaf5; }
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 20px 0; }
+    .data-card { background: #faf9f6; padding: 18px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 0.95rem; }
+    .data-card strong { color: var(--accent); display: block; margin-bottom: 8px; font-size: 1rem; }
     .data-card ul { margin: 0; padding-left: 18px; }
-    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
-    a:hover { border-color: var(--accent); }
-    .footer {
-      margin-top: 60px; text-align: center; font-size: 0.9rem; color: var(--text-muted);
-      border-top: 1px solid var(--border-color); padding-top: 25px;
-    }
-    @media (max-width: 600px) {
-      .wrapper { padding: 30px 20px; margin: 20px 10px; }
-      .header h1 { font-size: 2rem; }
-      .data-grid { grid-template-columns: 1fr; }
-    }
+    a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 50px; text-align: center; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 25px; }
+    
+    @media (max-width: 600px) { .wrapper { padding: 25px 20px; margin: 15px; } .header h1 { font-size: 1.8rem; } }
   </style>
 </head>
 <body>
@@ -135,414 +74,176 @@
       <option value="ko">한국어 (Korean)</option>
       <option value="zh">中文 (Chinese)</option>
       <option value="th">ไทย (Thai)</option>
-      <option value="my">မြန်မာ (Burmese)</option>
-      <option value="si">සිංහල (Sinhala)</option>
-      <option value="km">ខ្មែរ (Khmer)</option>
-      <option value="ne">नेपाली (Nepali)</option>
-      <option value="lo">ລາວ (Lao)</option>
-      <option value="de">Deutsch (German)</option>
-      <option value="es">Español (Spanish)</option>
-      <option value="fr">Français (French)</option>
-      <option value="it">Italiano (Italian)</option>
     </select>
   </div>
 
   <div id="content">
+    
     <div id="lang-en" class="lang-section active">
       <p><strong>Last Updated:</strong> March 2026</p>
-      <h2>Privacy Policy</h2>
-      <h3>1. Introduction</h3>
-      <p>This Privacy Policy explains how TU — Mindful Companion collects, uses, and protects your information. Users are responsible for ensuring any audio content they upload or share does not violate intellectual property rights.</p>
       
-      <h3>2. Information We Collect</h3>
+      <h2>Privacy Policy</h2>
+      <p>This Privacy Policy explains how <strong>TU — Mindful Companion</strong> ("we," "us," or "our") collects, uses, and protects your information. By using the App, you agree to the collection and use of your information in accordance with this policy.</p>
+      
+      <h3>1. Information We Collect</h3>
       <div class="data-grid">
         <div class="data-card">
           <strong>Account Information</strong>
           <ul>
-            <li>Email address</li>
-            <li>Display name</li>
-            <li>Authentication credentials</li>
+            <li>Email address & Display name</li>
+            <li>Authentication credentials (via Firebase Auth)</li>
           </ul>
         </div>
         <div class="data-card">
-          <strong>Meditation Activity</strong>
+          <strong>Meditation & Personal Data</strong>
           <ul>
             <li>Session history & duration</li>
-            <li>Presets used</li>
-            <li>Personal journal entries</li>
+            <li>Personal Journal entries</li>
           </ul>
         </div>
         <div class="data-card">
           <strong>Device & Identifiers</strong>
           <ul>
             <li>IDFA (iOS) / Ad ID (Android)</li>
-            <li>Device type & OS</li>
             <li>Anonymous crash logs</li>
           </ul>
         </div>
       </div>
 
-      <h3>3. Group Meditation & Communication</h3>
-      <p>Group meditation sessions may use real-time communication services. Voice communication is transmitted in real time and is not stored unless explicitly stated.</p>
+      <div class="highlight-box">
+        <strong>Privacy Note:</strong> Your journal entries are treated as highly sensitive. We do not sell, scan, or use your private reflections for advertising purposes.
+      </div>
 
-      <h3>4. Third-Party Services</h3>
-      <p>We rely on trusted third-party services: Google AdMob for personalized advertising and Firebase for analytics/crash diagnostics. They process data only as necessary.</p>
+      <h3>2. Audio, Communication & User Content</h3>
+      <ul>
+        <li><strong>Group Meditation:</strong> Voice communication is transmitted in real-time. We do not record or store your voice conversations unless explicitly stated for a specific feature.</li>
+        <li><strong>User Content:</strong> You are solely responsible for ensuring that any audio or content you upload does not violate third-party intellectual property rights.</li>
+      </ul>
 
-      <h3>5. User Rights & Data Security</h3>
-      <p>Under regulations like GDPR and CCPA, you can withdraw consent for personalized advertising or request access/deletion of your data via settings. We implement reasonable technical safeguards, but no digital system is completely secure. The App is not intended for children under 13.</p>
+      <h3>3. Third-Party Services & Advertising</h3>
+      <p>We use trusted third-party providers to enhance your experience and maintain app functionality:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> For serving personalized and non-personalized advertising.</li>
+        <li><strong>Firebase (Google):</strong> For analytics, cloud storage, and app performance monitoring.</li>
+      </ul>
+
+      <h3>4. User Rights & Account Deletion (GDPR & CCPA)</h3>
+      <p>Depending on your location, you have the right to access, correct, or request a copy of your personal data. You may withdraw consent for personalized advertising via the App settings or your device's OS settings.</p>
+      <p><strong>Account Deletion:</strong> You can permanently delete your account and all associated data directly within the App by navigating to <em>Settings > Account > Delete Account</em>, or by contacting us.</p>
+
+      <h3>5. Data Security & Children's Privacy</h3>
+      <p>We implement industry-standard technical safeguards. The App is not intended for children under 13 (or 16 in certain jurisdictions). We do not knowingly collect personal data from children.</p>
 
       <h2>Terms of Service</h2>
-      <p>By using the TU app, you agree to these terms. The app provides meditation tools and audio practices "as is" without warranties. Users agree not to misuse the service, disrupt group sessions, or upload illegal/harmful content. We reserve the right to suspend or terminate accounts that violate these rules.</p>
-      <p><strong>Contact Us:</strong> <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+
+      <div class="highlight-box alert">
+        <strong>1. Medical Disclaimer (Important)</strong><br>
+        TU — Mindful Companion provides meditation tools and wellness content for educational and informational purposes only. We are <strong>not</strong> a medical or healthcare provider. Our App is <strong>not</strong> intended to diagnose, treat, or cure any mental health condition or physical disease. Always seek the advice of a qualified healthcare provider regarding any medical condition.
+      </div>
+
+      <h3>2. Subscriptions & Payments</h3>
+      <p>If you purchase a premium subscription, billing is handled securely via the Apple App Store or Google Play Store.</p>
+      <ul>
+        <li><strong>Automatic Renewal:</strong> Subscriptions renew automatically unless canceled at least 24 hours before the end of the current billing period.</li>
+        <li><strong>Refunds:</strong> All refund requests must be processed directly through the respective App Store platforms, subject to their policies.</li>
+      </ul>
+
+      <h3>3. User Conduct & Objectionable Content (UGC Policy)</h3>
+      <p>By using the App, including Group Meditation features, you agree <strong>NOT</strong> to upload illegal, harmful, offensive, or copyright-infringing content, nor to harass or disrupt other users.</p>
+      <ul>
+        <li><strong>Zero Tolerance:</strong> We have a zero-tolerance policy for objectionable content or abusive users.</li>
+        <li><strong>Reporting & Blocking:</strong> Users can flag/report inappropriate content or behavior and block abusive users directly within the app.</li>
+        <li><strong>Enforcement:</strong> We will review reports and reserve the right to remove content and eject/ban users who violate these terms within 24 hours of a report.</li>
+      </ul>
+
+      <h3>4. Limitation of Liability</h3>
+      <p>The App is provided on an "AS IS" and "AS AVAILABLE" basis. To the fullest extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the App.</p>
+
+      <h3>Contact Us</h3>
+      <p>If you have any questions or concerns about these policies, please contact us at: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
     </div>
 
     <div id="lang-vi" class="lang-section">
       <p><strong>Cập nhật lần cuối:</strong> Tháng 3, 2026</p>
-      <h2>Chính sách Quyền riêng tư</h2>
-      <h3>1. Giới thiệu</h3>
-      <p>Chính sách này giải thích cách TU — Mindful Companion thu thập, sử dụng và bảo vệ thông tin. Người dùng chịu trách nhiệm đảm bảo các tệp âm thanh họ chia sẻ không vi phạm quyền sở hữu trí tuệ.</p>
       
-      <h3>2. Thông tin chúng tôi thu thập</h3>
+      <h2>Chính sách Quyền riêng tư</h2>
+      <p>Chính sách này giải thích cách <strong>TU — Mindful Companion</strong> thu thập, sử dụng và bảo vệ thông tin của bạn.</p>
+      
+      <h3>1. Thông tin chúng tôi thu thập</h3>
       <div class="data-grid">
         <div class="data-card">
           <strong>Tài khoản</strong>
-          <ul>
-            <li>Địa chỉ email</li>
-            <li>Tên hiển thị</li>
-            <li>Thông tin đăng nhập</li>
-          </ul>
+          <ul><li>Email & Tên hiển thị</li><li>Thông tin đăng nhập</li></ul>
         </div>
         <div class="data-card">
           <strong>Dữ liệu Thiền</strong>
-          <ul>
-            <li>Lịch sử và thời lượng</li>
-            <li>Preset âm thanh đã dùng</li>
-            <li>Nhật ký cá nhân</li>
-          </ul>
+          <ul><li>Lịch sử & thời lượng</li><li>Nhật ký cá nhân</li></ul>
         </div>
         <div class="data-card">
           <strong>Thiết bị & Định danh</strong>
-          <ul>
-            <li>IDFA (iOS) / ID Quảng cáo</li>
-            <li>Hệ điều hành thiết bị</li>
-            <li>Dữ liệu lỗi ẩn danh</li>
-          </ul>
+          <ul><li>IDFA / ID Quảng cáo</li><li>Dữ liệu lỗi ẩn danh</li></ul>
         </div>
       </div>
 
-      <h3>3. Thiền nhóm & Giao tiếp</h3>
-      <p>Các phiên thiền nhóm có thể sử dụng dịch vụ giao tiếp thời gian thực. Âm thanh chỉ được truyền trực tiếp và không được lưu trữ trừ khi có thông báo rõ ràng.</p>
+      <div class="highlight-box">
+        <strong>Lưu ý:</strong> Nhật ký cá nhân của bạn được bảo mật tuyệt đối. Chúng tôi không quét hoặc bán nội dung này cho mục đích quảng cáo.
+      </div>
 
-      <h3>4. Dịch vụ bên thứ ba</h3>
-      <p>Chúng tôi sử dụng Google AdMob để hiển thị quảng cáo cá nhân hóa và Firebase để chẩn đoán lỗi. Các dịch vụ này chỉ xử lý dữ liệu cần thiết.</p>
+      <h3>2. Âm thanh & Nội dung người dùng</h3>
+      <p>Âm thanh trong <strong>Thiền nhóm</strong> được truyền trực tiếp và không lưu trữ. Người dùng tự chịu trách nhiệm đảm bảo nội dung tải lên không vi phạm bản quyền.</p>
 
-      <h3>5. Quyền người dùng & Bảo mật</h3>
-      <p>Theo GDPR/CCPA, bạn có quyền rút lại sự đồng ý quảng cáo hoặc yêu cầu xóa dữ liệu trong cài đặt. Chúng tôi áp dụng các biện pháp bảo mật hợp lý. Ứng dụng không dành cho trẻ em dưới 13 tuổi.</p>
+      <h3>3. Dịch vụ bên thứ ba & Xóa tài khoản</h3>
+      <p>Chúng tôi sử dụng Google AdMob cho quảng cáo và Firebase cho phân tích ứng dụng. Bạn có quyền yêu cầu trích xuất dữ liệu, hoặc rút lại sự đồng ý quảng cáo cá nhân hóa.</p>
+      <p><strong>Xóa tài khoản:</strong> Bạn có thể xóa vĩnh viễn tài khoản và toàn bộ dữ liệu ngay trong ứng dụng tại mục <em>Cài đặt > Tài khoản > Xóa tài khoản</em>.</p>
 
       <h2>Điều khoản Dịch vụ</h2>
-      <p>Khi sử dụng ứng dụng TU, bạn đồng ý với các điều khoản này. Ứng dụng được cung cấp "nguyên trạng". Bạn đồng ý không lạm dụng dịch vụ, không gây gián đoạn thiền nhóm và không đăng tải nội dung độc hại. Chúng tôi có quyền đình chỉ tài khoản vi phạm.</p>
-      <p><strong>Liên hệ:</strong> <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+
+      <div class="highlight-box alert">
+        <strong>1. Miễn trừ Y tế (Quan trọng)</strong><br>
+        TU là ứng dụng hỗ trợ thiền định, <strong>không</strong> phải là dịch vụ y tế. Ứng dụng không dùng để chẩn đoán, điều trị hay chữa khỏi bất kỳ bệnh lý về thể chất hay tâm thần nào. Luôn tham khảo ý kiến bác sĩ cho các vấn đề y tế của bạn.
+      </div>
+
+      <h3>2. Đăng ký & Thanh toán</h3>
+      <p>Gói cao cấp được thanh toán qua Apple App Store hoặc Google Play. Gói sẽ tự động gia hạn trừ khi bị hủy trước 24 giờ. Mọi yêu cầu hoàn tiền phải thực hiện qua hệ thống của kho ứng dụng.</p>
+
+      <h3>3. Hành vi người dùng & Nội dung vi phạm</h3>
+      <p>Bạn đồng ý <strong>KHÔNG</strong> tải lên nội dung bất hợp pháp, phản cảm, vi phạm bản quyền hoặc quấy rối người khác.</p>
+      <ul>
+        <li><strong>Không khoan nhượng:</strong> Chúng tôi áp dụng chính sách không khoan nhượng với nội dung phản cảm và hành vi lạm dụng.</li>
+        <li><strong>Báo cáo & Chặn:</strong> Bạn có thể báo cáo (Report) nội dung xấu và chặn (Block) người dùng vi phạm ngay trong ứng dụng.</li>
+        <li><strong>Xử lý:</strong> Chúng tôi sẽ gỡ bỏ nội dung và cấm vĩnh viễn (ban) các tài khoản vi phạm trong vòng 24 giờ kể từ khi nhận được báo cáo.</li>
+      </ul>
+
+      <h3>Liên hệ</h3>
+      <p>Mọi thắc mắc, vui lòng liên hệ: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
     </div>
 
     <div id="lang-ja" class="lang-section">
       <p><strong>最終更新日：</strong> 2026年3月</p>
-      <h2>プライバシーポリシー</h2>
-      <h3>1. はじめに</h3>
-      <p>本ポリシーは、TU — Mindful Companionがお客様の情報をどのように収集し保護するかを説明します。共有する音声コンテンツの著作権については、ユーザーが責任を負うものとします。</p>
-      
-      <h3>2. 収集する情報</h3>
-      <div class="data-grid">
-        <div class="data-card">
-          <strong>アカウント</strong>
-          <ul>
-            <li>メールアドレス</li>
-            <li>表示名</li>
-            <li>認証情報</li>
-          </ul>
-        </div>
-        <div class="data-card">
-          <strong>瞑想データ</strong>
-          <ul>
-            <li>セッション履歴と時間</li>
-            <li>使用したプリセット</li>
-            <li>個人的なジャーナル</li>
-          </ul>
-        </div>
-        <div class="data-card">
-          <strong>デバイスと識別子</strong>
-          <ul>
-            <li>IDFA / 広告ID</li>
-            <li>デバイスとOS情報</li>
-            <li>匿名のクラッシュログ</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>3. グループ瞑想</h3>
-      <p>グループセッションでの音声通信はリアルタイムで行われ、明記されない限り保存されません。</p>
-
-      <h3>4. サードパーティサービスと権利</h3>
-      <p>広告配信のためにGoogle AdMobを使用しています。GDPRやCCPAに基づき、設定からパーソナライズ広告の同意を撤回したり、データの削除を要求したりできます。13歳未満の児童による利用は想定していません。</p>
-
-      <h2>利用規約</h2>
-      <p>本アプリは「現状有姿」で提供されます。サービスの悪用、グループセッションの妨害、違法コンテンツのアップロードを禁止します。違反したアカウントは停止される場合があります。</p>
-      <p><strong>お問い合わせ:</strong> <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+      <h2>プライバシーポリシー & 利用規約</h2>
+      <p>本アプリは医療機器ではありません。不適切なコンテンツやユーザーに対する報告・ブロック機能を提供しており、違反者は24時間以内にアカウント停止の対象となります。アカウントはアプリ内の設定からいつでも削除可能です。</p>
+      <p>お問い合わせ: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
     </div>
 
     <div id="lang-ko" class="lang-section">
       <p><strong>최종 업데이트:</strong> 2026년 3월</p>
-      <h2>개인정보 처리방침</h2>
-      <h3>1. 소개</h3>
-      <p>본 방침은 TU — Mindful Companion이 귀하의 정보를 수집하고 보호하는 방법을 설명합니다. 업로드하는 오디오 콘텐츠의 저작권 위반 여부는 사용자에게 책임이 있습니다.</p>
-      
-      <h3>2. 수집하는 정보</h3>
-      <div class="data-grid">
-        <div class="data-card">
-          <strong>계정 정보</strong>
-          <ul><li>이메일 주소</li><li>표시 이름</li><li>인증 자격 증명</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>명상 활동</strong>
-          <ul><li>세션 기록 및 시간</li><li>사용된 프리셋</li><li>개인 일지</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>기기 및 식별자</strong>
-          <ul><li>IDFA / 광고 ID</li><li>기기 유형 및 OS</li><li>익명 충돌 로그</li></ul>
-        </div>
-      </div>
-
-      <h3>3. 그룹 명상</h3>
-      <p>그룹 명상의 음성 통신은 실시간으로 전송되며 별도로 명시되지 않는 한 저장되지 않습니다.</p>
-
-      <h3>4. 타사 서비스 및 사용자 권리</h3>
-      <p>당사는 맞춤형 광고를 위해 Google AdMob을 사용합니다. 설정에서 광고 동의를 철회하거나 데이터 삭제를 요청할 수 있습니다. 본 앱은 13세 미만의 어린이를 대상으로 하지 않습니다.</p>
-
-      <h2>서비스 약관</h2>
-      <p>앱을 사용함으로써 귀하는 서비스 남용, 그룹 세션 방해, 불법 콘텐츠 업로드를 하지 않을 것에 동의합니다. 위반 시 계정이 정지될 수 있습니다.</p>
-      <p><strong>문의하기:</strong> <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+      <h2>개인정보 처리방침 & 서비스 약관</h2>
+      <p>본 앱은 의료 기기가 아닙니다. 부적절한 콘텐츠 및 사용자에 대한 신고/차단 기능을 제공하며, 위반자는 24시간 이내에 계정이 정지될 수 있습니다. 앱 내 설정에서 언제든지 계정을 삭제할 수 있습니다.</p>
+      <p>문의: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
     </div>
 
     <div id="lang-zh" class="lang-section">
       <p><strong>最后更新：</strong> 2026年3月</p>
-      <h2>隐私政策</h2>
-      <h3>1. 简介</h3>
-      <p>本政策说明了 TU — Mindful Companion 如何收集和保护您的信息。用户须自行确保上传或分享的音频内容不侵犯知识产权。</p>
-      
-      <h3>2. 我们收集的信息</h3>
-      <div class="data-grid">
-        <div class="data-card">
-          <strong>账户信息</strong>
-          <ul><li>电子邮件地址</li><li>显示名称</li><li>认证凭据</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>冥想活动</strong>
-          <ul><li>会话记录与时长</li><li>使用的预设</li><li>个人日记</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>设备与标识符</strong>
-          <ul><li>IDFA / 广告ID</li><li>设备类型与操作系统</li><li>匿名崩溃日志</li></ul>
-        </div>
-      </div>
-
-      <h3>3. 小组冥想</h3>
-      <p>小组冥想中的语音通信是实时传输的，除非明确说明，否则不会被存储。</p>
-
-      <h3>4. 第三方服务与用户权利</h3>
-      <p>我们使用 Google AdMob 提供个性化广告。根据GDPR/CCPA，您可以在设置中撤回广告同意或请求删除数据。本应用不面向13岁以下儿童。</p>
-
-      <h2>服务条款</h2>
-      <p>使用本应用即表示您同意不滥用服务、不干扰小组会话、不上传非法内容。违反规定的账户可能会被暂停或终止。</p>
-      <p><strong>联系我们:</strong> <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+      <h2>隐私政策与服务条款</h2>
+      <p>本应用不是医疗设备。我们提供举报和屏蔽不良内容及用户的功能，违规者将在24小时内被封号。您可以在应用设置中随时删除您的帐户。</p>
+      <p>联系我们: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
     </div>
 
     <div id="lang-th" class="lang-section">
       <p><strong>อัปเดตล่าสุด:</strong> มีนาคม 2026</p>
-      <h2>นโยบายความเป็นส่วนตัว</h2>
-      <h3>1. บทนำ</h3>
-      <p>นโยบายนี้อธิบายว่า TU — Mindful Companion เก็บรวบรวมและปกป้องข้อมูลของคุณอย่างไร ผู้ใช้ต้องรับผิดชอบต่อเนื้อหาเสียงที่แชร์ไม่ให้ละเมิดลิขสิทธิ์</p>
-      
-      <h3>2. ข้อมูลที่เราเก็บ</h3>
-      <div class="data-grid">
-        <div class="data-card">
-          <strong>บัญชี</strong>
-          <ul><li>อีเมล</li><li>ชื่อที่แสดง</li><li>ข้อมูลการเข้าสู่ระบบ</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>การทำสมาธิ</strong>
-          <ul><li>ประวัติและระยะเวลา</li><li>พรีเซ็ตที่ใช้</li><li>บันทึกส่วนตัว</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>อุปกรณ์และตัวระบุ</strong>
-          <ul><li>IDFA / Advertising ID</li><li>ประเภทอุปกรณ์และ OS</li><li>บันทึกข้อผิดพลาด</li></ul>
-        </div>
-      </div>
-
-      <h3>3. การทำสมาธิแบบกลุ่ม</h3>
-      <p>การสื่อสารด้วยเสียงจะส่งแบบเรียลไทม์และไม่ถูกบันทึกเว้นแต่จะระบุไว้</p>
-
-      <h3>4. สิทธิ์ของผู้ใช้และบริการภายนอก</h3>
-      <p>เราใช้ Google AdMob สำหรับโฆษณา คุณสามารถเพิกถอนความยินยอมหรือขอลบข้อมูลได้ในการตั้งค่า แอปนี้ไม่ได้มีไว้สำหรับเด็กอายุต่ำกว่า 13 ปี</p>
-
-      <h2>ข้อกำหนดการให้บริการ</h2>
-      <p>ห้ามใช้แอปในทางที่ผิด รบกวนกลุ่ม หรืออัปโหลดเนื้อหาที่ผิดกฎหมาย เราอาจระงับบัญชีที่ละเมิดข้อกำหนดเหล่านี้</p>
-      <p><strong>ติดต่อเรา:</strong> <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-my" class="lang-section">
-      <p><strong>နောက်ဆုံးပြင်ဆင်ချက်:</strong> မတ်လ ၂၀၂၆</p>
-      <h2>ကိုယ်ရေးကိုယ်တာမူဝါဒ</h2>
-      <p>TU — Mindful Companion သည် သင့်အချက်အလက်များကို မည်သို့ရယူပြီး ကာကွယ်ပေးကြောင်း ရှင်းပြထားပါသည်။ အသံဖိုင်မူပိုင်ခွင့်ကို အသုံးပြုသူက တာဝန်ယူရပါမည်။</p>
-      <div class="data-grid">
-        <div class="data-card">
-          <strong>အကောင့်</strong>
-          <ul><li>အီးမေးလ်၊ အမည်၊ ဝင်ရောက်မှုမှတ်တမ်း</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>တရားထိုင်ခြင်း</strong>
-          <ul><li>မှတ်တမ်း၊ အချိန်၊ အသုံးပြုထားသော အသံများ</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>စက်ပစ္စည်းသတ်မှတ်ချက်များ</strong>
-          <ul><li>IDFA / ကြော်ငြာ ID၊ စက်အမျိုးအစား</li></ul>
-        </div>
-      </div>
-      <h3>အဖွဲ့လိုက် တရားထိုင်ခြင်း</h3>
-      <p>အသံပြောဆိုမှုများကို အချိန်နှင့်တပြေးညီ ပို့လွှတ်ပြီး သိမ်းဆည်းထားခြင်း မရှိပါ။</p>
-      <h2>ဝန်ဆောင်မှုဆိုင်ရာ စည်းမျဉ်းများ</h2>
-      <p>ဝန်ဆောင်မှုကို အလွဲသုံးစားလုပ်ခြင်း၊ တရားထိုင်မှုကို နှောင့်ယှက်ခြင်း မပြုရပါ။ ဆက်သွယ်ရန်: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-si" class="lang-section">
-      <p><strong>අවසන් යාවත්කාලීන කිරීම:</strong> 2026 මාර්තු</p>
-      <h2>රහස්‍යතා ප්‍රතිපත්තිය</h2>
-      <p>TU — Mindful Companion ඔබගේ දත්ත එක්රැස් කරන ආකාරය මෙහි පැහැදිලි කරයි. බෙදාගන්නා ශ්‍රව්‍ය ගොනු සඳහා ප්‍රකාශන හිමිකම් වගකීම පරිශීලකයා සතුය.</p>
-      <div class="data-grid">
-        <div class="data-card">
-          <strong>ගිණුම</strong>
-          <ul><li>විද්‍යුත් තැපෑල, නම</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>භාවනා දත්ත</strong>
-          <ul><li>ඉතිහාසය, කාලය, සටහන්</li></ul>
-        </div>
-        <div class="data-card">
-          <strong>උපාංග හැඳුනුම්පත්</strong>
-          <ul><li>IDFA / දැන්වීම් ID, උපාංග තොරතුරු</li></ul>
-        </div>
-      </div>
-      <h3>කණ්ඩායම් භාවනාව</h3>
-      <p>හඬ සන්නිවේදනය තත්‍ය කාලීනව සිදු වන අතර ගබඩා නොකෙරේ.</p>
-      <h2>සේවා කොන්දේසි</h2>
-      <p>මෙම යෙදුම අනිසි ලෙස භාවිතා කිරීම හෝ නීති විරෝධී දේවල් පළ කිරීම තහනම් වේ. විද්‍යුත් තැපෑල: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-km" class="lang-section">
-      <p><strong>ធ្វើបច្ចុប្បន្នភាពចុងក្រោយ៖</strong> មីនា ២០២៦</p>
-      <h2>គោលការណ៍ឯកជនភាព</h2>
-      <p>TU — Mindful Companion ពន្យល់ពីរបៀបប្រមូលទិន្នន័យរបស់អ្នក។ អ្នកប្រើប្រាស់ទទួលខុសត្រូវលើការរក្សាសិទ្ធិសំឡេងដែលបានចែករំលែក។</p>
-      <div class="data-grid">
-        <div class="data-card"><strong>គណនី</strong><ul><li>អ៊ីមែល ឈ្មោះ</li></ul></div>
-        <div class="data-card"><strong>ទិន្នន័យសមាធិ</strong><ul><li>ប្រវត្តិ និងរយៈពេល</li></ul></div>
-        <div class="data-card"><strong>លេខសម្គាល់ឧបករណ៍</strong><ul><li>IDFA / Advertising ID</li></ul></div>
-      </div>
-      <h3>ការធ្វើសមាធិជាក្រុម</h3>
-      <p>ការប្រាស្រ័យទាក់ទងជាសំឡេងមិនត្រូវបានរក្សាទុកទេ។</p>
-      <h2>លក្ខខណ្ឌនៃសេវាកម្ម</h2>
-      <p>ការរំលោភបំពានសេវាកម្មត្រូវបានហាមឃាត់។ អ៊ីមែល៖ <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-ne" class="lang-section">
-      <p><strong>अन्तिम अपडेट:</strong> मार्च २०२६</p>
-      <h2>गोपनीयता नीति</h2>
-      <p>TU — Mindful Companion ले तपाईंको डाटा कसरी सङ्कलन गर्छ भनी व्याख्या गर्छ। अडियो प्रतिलिपि अधिकारको लागि प्रयोगकर्ता जिम्मेवार छ।</p>
-      <div class="data-grid">
-        <div class="data-card"><strong>खाता</strong><ul><li>इमेल, नाम</li></ul></div>
-        <div class="data-card"><strong>ध्यान डाटा</strong><ul><li>इतिहास र अवधि</li></ul></div>
-        <div class="data-card"><strong>उपकरण पहिचानकर्ता</strong><ul><li>IDFA / विज्ञापन ID</li></ul></div>
-      </div>
-      <h3>सामूहिक ध्यान</h3>
-      <p>आवाज सञ्चार वास्तविक समयमा हुन्छ र भण्डारण गरिँदैन।</p>
-      <h2>सेवाका सर्तहरू</h2>
-      <p>सेवाको दुरुपयोग गर्न पाइँदैन। इमेल: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-lo" class="lang-section">
-      <p><strong>ອັບເດດລ່າສຸດ:</strong> ມີນາ 2026</p>
-      <h2>ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</h2>
-      <p>TU — Mindful Companion ອະທິບາຍວິທີເກັບກຳຂໍ້ມູນຂອງທ່ານ. ຜູ້ໃຊ້ຮັບຜິດຊອບລິຂະສິດສຽງ.</p>
-      <div class="data-grid">
-        <div class="data-card"><strong>ບັນຊີ</strong><ul><li>ອີເມວ, ຊື່</li></ul></div>
-        <div class="data-card"><strong>ຂໍ້ມູນການນັ່ງສະມາທິ</strong><ul><li>ປະຫວັດ ແລະ ເວລາ</li></ul></div>
-        <div class="data-card"><strong>ຕົວລະບຸອຸປະກອນ</strong><ul><li>IDFA / ໂຄສະນາ ID</li></ul></div>
-      </div>
-      <h3>ການນັ່ງສະມາທິເປັນກຸ່ມ</h3>
-      <p>ການສື່ສານດ້ວຍສຽງແມ່ນບໍ່ໄດ້ຖືກເກັບໄວ້.</p>
-      <h2>ເງື່ອນໄຂການໃຫ້ບໍລິການ</h2>
-      <p>ຫ້າມໃຊ້ບໍລິການໃນທາງທີ່ຜິດ. ອີເມວ: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-de" class="lang-section">
-      <p><strong>Zuletzt aktualisiert:</strong> März 2026</p>
-      <h2>Datenschutzerklärung</h2>
-      <h3>1. Einführung</h3>
-      <p>Diese Richtlinie erklärt, wie TU — Mindful Companion Ihre Daten schützt. Nutzer sind für die Urheberrechte geteilter Audioinhalte verantwortlich.</p>
-      <div class="data-grid">
-        <div class="data-card"><strong>Konto</strong><ul><li>E-Mail, Name, Login-Daten</li></ul></div>
-        <div class="data-card"><strong>Meditation</strong><ul><li>Sitzungsverlauf & Dauer</li></ul></div>
-        <div class="data-card"><strong>Geräte & IDs</strong><ul><li>IDFA / Werbe-ID</li></ul></div>
-      </div>
-      <h3>2. Gruppenmeditation</h3>
-      <p>Die Sprachkommunikation erfolgt in Echtzeit und wird nicht gespeichert.</p>
-      <h2>Nutzungsbedingungen</h2>
-      <p>Sie stimmen zu, den Dienst nicht zu missbrauchen oder illegale Inhalte hochzuladen. Kontakt: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-es" class="lang-section">
-      <p><strong>Última actualización:</strong> Marzo de 2026</p>
-      <h2>Política de Privacidad</h2>
-      <h3>1. Introducción</h3>
-      <p>Esta política explica cómo TU protege su información. Los usuarios son responsables de los derechos de autor del contenido de audio.</p>
-      <div class="data-grid">
-        <div class="data-card"><strong>Cuenta</strong><ul><li>Correo, nombre, credenciales</li></ul></div>
-        <div class="data-card"><strong>Meditación</strong><ul><li>Historial de sesiones y duración</li></ul></div>
-        <div class="data-card"><strong>Dispositivos e ID</strong><ul><li>IDFA / ID de publicidad</li></ul></div>
-      </div>
-      <h3>2. Meditación en grupo</h3>
-      <p>La comunicación de voz es en tiempo real y no se almacena.</p>
-      <h2>Términos de Servicio</h2>
-      <p>Acepta no hacer un mal uso del servicio ni subir contenido ilegal. Contacto: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-fr" class="lang-section">
-      <p><strong>Dernière mise à jour :</strong> Mars 2026</p>
-      <h2>Politique de Confidentialité</h2>
-      <h3>1. Introduction</h3>
-      <p>Cette politique explique comment TU protège vos informations. Les utilisateurs sont responsables des droits d'auteur des contenus audio.</p>
-      <div class="data-grid">
-        <div class="data-card"><strong>Compte</strong><ul><li>Email, nom, identifiants</li></ul></div>
-        <div class="data-card"><strong>Méditation</strong><ul><li>Historique des sessions et durée</li></ul></div>
-        <div class="data-card"><strong>Appareils & IDs</strong><ul><li>IDFA / ID publicitaire</li></ul></div>
-      </div>
-      <h3>2. Méditation de groupe</h3>
-      <p>La communication vocale se fait en temps réel et n'est pas enregistrée.</p>
-      <h2>Conditions d'utilisation</h2>
-      <p>Vous acceptez de ne pas abuser du service ou de ne pas télécharger de contenu illégal. Contact : <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
-    </div>
-
-    <div id="lang-it" class="lang-section">
-      <p><strong>Ultimo aggiornamento:</strong> Marzo 2026</p>
-      <h2>Informativa sulla Privacy</h2>
-      <h3>1. Introduzione</h3>
-      <p>Questa politica spiega come TU protegge le tue informazioni. Gli utenti sono responsabili del copyright dei contenuti audio condivisi.</p>
-      <div class="data-grid">
-        <div class="data-card"><strong>Account</strong><ul><li>Email, nome, credenziali</li></ul></div>
-        <div class="data-card"><strong>Meditazione</strong><ul><li>Cronologia e durata sessioni</li></ul></div>
-        <div class="data-card"><strong>Dispositivi e ID</strong><ul><li>IDFA / ID pubblicitario</li></ul></div>
-      </div>
-      <h3>2. Meditazione di gruppo</h3>
-      <p>La comunicazione vocale avviene in tempo reale e non viene memorizzata.</p>
-      <h2>Termini di Servizio</h2>
-      <p>Accetti di non abusare del servizio o caricare contenuti illegali. Contatto: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+      <h2>นโยบายความเป็นส่วนตัวและข้อกำหนด</h2>
+      <p>แอปนี้ไม่ใช่เครื่องมือทางการแพทย์ เรามีระบบรายงานและบล็อกเนื้อหาหรือผู้ใช้ที่ไม่เหมาะสม ผู้ที่ฝ่าฝืนจะถูกแบนภายใน 24 ชั่วโมง คุณสามารถลบบัญชีได้ตลอดเวลาในการตั้งค่า</p>
+      <p>ติดต่อ: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
     </div>
 
   </div>
@@ -554,16 +255,9 @@
 
 <script>
   function changeLanguage() {
-    const select = document.getElementById('languageSelect');
-    const selectedLang = select.value;
-    const sections = document.querySelectorAll('.lang-section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-    });
-    const activeSection = document.getElementById('lang-' + selectedLang);
-    if (activeSection) {
-      activeSection.classList.add('active');
-    }
+    const val = document.getElementById('languageSelect').value;
+    document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+    document.getElementById('lang-' + val).classList.add('active');
   }
 </script>
 
