@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu — Mindful Companion | Privacy Policy & Terms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+        font-family: 'Cactus';
+        src: url('./CactusClassicalSerif-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    :root {
+        --bg-primary: #f9f8f6;
+        --card-bg: #ffffff;
+        --text-primary: #2a3b32;
+        --text-secondary: #5e6b63;
+        --accent: #4a5d4e;
+        --border-color: #e2e8d5;
+        --alert-bg: #fdfaf6;
+        --alert-border: #b33a3a;
+        --nav-border: rgba(42, 59, 50, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        margin: 0; padding: 0;
+        font-family: 'Inter', -apple-system, sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .nav {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--nav-border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--bg-primary);
+    }
+
+    .nav a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-family: 'Cactus', serif;
+        font-size: 1.5rem;
+        letter-spacing: -0.02em;
+    }
+
+    .nav select {
+        appearance: none; background-color: transparent; border: 1px solid var(--border-color);
+        padding: 8px 35px 8px 15px; font-size: 0.9rem; color: var(--text-primary); border-radius: 20px; cursor: pointer; outline: none;
+        font-family: 'Inter', sans-serif;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232a3b32%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat; background-position: right 12px top 50%; background-size: 10px auto; transition: all 0.2s ease;
+    }
+
+    .nav select:hover { border-color: var(--accent); }
+
+    .wrapper {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .header-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: revealUp 0.8s ease forwards;
+    }
+
+    .header-title h1 {
+        font-family: 'Cactus', serif;
+        font-size: 3rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+    }
+
+    .header-title p {
+        color: var(--text-secondary);
+        font-style: italic;
+        font-family: 'Cactus', serif;
+        font-size: 1.2rem;
+    }
+
+    .lang-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+    .lang-section.active { display: block; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes revealUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    h2 { font-family: 'Cactus', serif; font-size: 2rem; font-weight: 400; margin: 3rem 0 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+    h3 { font-weight: 500; color: var(--text-primary); font-size: 1.2rem; margin: 2rem 0 1rem; }
+    p, li { color: var(--text-secondary); margin-bottom: 1rem; }
+    ul { padding-left: 20px; margin-bottom: 1.5rem; }
+    li { margin-bottom: 8px; }
+
+    .highlight-box { background: var(--alert-bg); border-left: 3px solid var(--accent); padding: 1.2rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
+    .highlight-box.alert { border-left-color: var(--alert-border); background: #fdf6f6; }
+    
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 2rem 0; }
+    .data-card { background: var(--card-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+    .data-card strong { color: var(--text-primary); display: block; margin-bottom: 10px; font-weight: 600; font-size: 1rem; }
+    .data-card ul { margin: 0; padding-left: 18px; }
+
+    a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-bottom-color: var(--accent); }
+
+    .footer { margin-top: 5rem; text-align: center; font-size: 0.9rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding: 2rem 0; }
+    
+    @media (max-width: 600px) { 
+        .header-title h1 { font-size: 2.2rem; } 
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="index.html">Tu</a>
+    <select id="languageSelect" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="vi">Tiếng Việt</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="it">Italiano</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="zh">中文</option>
+      <option value="th">ไทย</option>
+      <option value="my">မြန်မာ</option>
+      <option value="si">සිංහල</option>
+      <option value="km">ខ្មែរ</option>
+      <option value="ne">नेपाली</option>
+      <option value="lo">ລາວ</option>
+    </select>
+</div>
+
+<div class="wrapper">
+  <div class="header-title">
+    <h1>Privacy Policy & Terms</h1>
+    <p>Mindful Companion</p>
+  </div>
+
+  <div id="content">
+    <div id="lang-en" class="lang-section active">
+      <p><strong>Last Updated:</strong> March 2026</p>
+      
+      <h2>Privacy Policy</h2>
+      <p>This Privacy Policy explains how <strong>TU — Mindful Companion</strong> ("we," "us," or "our") collects, uses, and protects your information. By using the App, you agree to the collection and use of your information in accordance with this policy.</p>
+      
+      <h3>1. Information We Collect</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>Account Information</strong>
+          <ul>
+            <li>Email address & Display name</li>
+            <li>Authentication credentials (via Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Meditation & Personal Data</strong>
+          <ul>
+            <li>Session history & duration</li>
+            <li>Personal Journal entries</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Device & Identifiers</strong>
+          <ul>
+            <li>IDFA (iOS) / Ad ID (Android)</li>
+            <li>Anonymous crash logs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Privacy Note:</strong> Your journal entries are treated as highly sensitive. We do not sell, scan, or use your private reflections for advertising purposes.
+      </div>
+
+      <h3>2. Audio, Communication & User Content</h3>
+      <ul>
+        <li><strong>Group Meditation:</strong> Voice communication is transmitted in real-time. We do not record or store your voice conversations unless explicitly stated for a specific feature.</li>
+        <li><strong>User Content:</strong> You are solely responsible for ensuring that any audio or content you upload does not violate third-party intellectual property rights.</li>
+      </ul>
+
+      <h3>3. Third-Party Services & Advertising</h3>
+      <p>We use trusted third-party providers to enhance your experience and maintain app functionality:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> For serving personalized and non-personalized advertising.</li>
+        <li><strong>Firebase (Google):</strong> For analytics, cloud storage, and app performance monitoring.</li>
+      </ul>
+
+      <h3>4. User Rights & Account Deletion (GDPR & CCPA)</h3>
+      <p>Depending on your location, you have the right to access, correct, or request a copy of your personal data. You may withdraw consent for personalized advertising via the App settings or your device's OS settings.</p>
+      <p><strong>Account Deletion:</strong> You can permanently delete your account and all associated data directly within the App by navigating to <em>Settings > Account > Delete Account</em>, or by contacting us.</p>
+
+      <h3>5. Data Security & Children's Privacy</h3>
+      <p>We implement industry-standard technical safeguards. The App is not intended for children under 13 (or 16 in certain jurisdictions). We do not knowingly collect personal data from children.</p>
+
+      <h2>Terms of Service</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. Medical Disclaimer (Important)</strong><br>
+        TU — Mindful Companion provides meditation tools and wellness content for educational and informational purposes only. We are <strong>not</strong> a medical or healthcare provider. Our App is <strong>not</strong> intended to diagnose, treat, or cure any mental health condition or physical disease. Always seek the advice of a qualified healthcare provider regarding any medical condition.
+      </div>
+
+      <h3>2. Subscriptions & Payments</h3>
+      <p>If you purchase a premium subscription, billing is handled securely via the Apple App Store or Google Play Store.</p>
+      <ul>
+        <li><strong>Automatic Renewal:</strong> Subscriptions renew automatically unless canceled at least 24 hours before the end of the current billing period.</li>
+        <li><strong>Refunds:</strong> All refund requests must be processed directly through the respective App Store platforms, subject to their policies.</li>
+      </ul>
+
+      <h3>3. User Conduct & Objectionable Content (UGC Policy)</h3>
+      <p>By using the App, including Group Meditation features, you agree <strong>NOT</strong> to upload illegal, harmful, offensive, or copyright-infringing content, nor to harass or disrupt other users.</p>
+      <ul>
+        <li><strong>Zero Tolerance:</strong> We have a zero-tolerance policy for objectionable content or abusive users.</li>
+        <li><strong>Reporting & Blocking:</strong> Users can flag/report inappropriate content or behavior and block abusive users directly within the app.</li>
+        <li><strong>Enforcement:</strong> We will review reports and reserve the right to remove content and eject/ban users who violate these terms within 24 hours of a report.</li>
+      </ul>
+
+      <h3>4. Limitation of Liability</h3>
+      <p>The App is provided on an "AS IS" and "AS AVAILABLE" basis. To the fullest extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the App.</p>
+
+      <h3>Contact Us</h3>
+      <p>If you have any questions or concerns about these policies, please contact us at: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-vi" class="lang-section">
+      <p><strong>Cập nhật lần cuối:</strong> Tháng 3, 2026</p>
+
+      <h2>Chính sách Quyền riêng tư</h2>
+      <p>Chính sách Quyền riêng tư này giải thích cách <strong>TU — Mindful Companion</strong> ("chúng tôi," "của chúng tôi") thu thập, sử dụng và bảo vệ thông tin của bạn. Bằng cách sử dụng Ứng dụng, bạn đồng ý với việc thu thập và sử dụng thông tin của mình theo chính sách này.</p>
+
+      <h3>1. Thông tin chúng tôi thu thập</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>Thông tin Tài khoản</strong>
+          <ul>
+            <li>Địa chỉ Email & Tên hiển thị</li>
+            <li>Thông tin xác thực (qua Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Thiền & Dữ liệu Cá nhân</strong>
+          <ul>
+            <li>Lịch sử buổi thiền & Độ dài thời gian</li>
+            <li>Các ghi chép Nhật ký cá nhân</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Thiết bị & Định danh</strong>
+          <ul>
+            <li>IDFA (iOS) / Ad ID (Android)</li>
+            <li>Nhật ký lỗi ứng dụng ẩn danh</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Lưu ý về Quyền riêng tư:</strong> Các ghi chép nhật ký của bạn được xử lý như dữ liệu cực kỳ nhạy cảm. Chúng tôi không bán, quét hoặc sử dụng các suy nghĩ cá nhân của bạn cho mục đích quảng cáo.
+      </div>
+
+      <h3>2. Âm thanh, Truyền thông & Nội dung người dùng</h3>
+      <ul>
+        <li><strong>Thiền nhóm:</strong> Liên lạc bằng giọng nói được truyền theo thời gian thực. Chúng tôi không ghi âm hoặc lưu trữ các cuộc hội thoại giọng nói trừ khi được nêu rõ ràng cho một tính năng cụ thể.</li>
+        <li><strong>Nội dung người dùng:</strong> Bạn hoàn toàn chịu trách nhiệm đảm bảo rằng bất kỳ âm thanh hoặc nội dung nào bạn tải lên không vi phạm quyền sở hữu trí tuệ của bên thứ ba.</li>
+      </ul>
+
+      <h3>3. Dịch vụ bên thứ ba & Quảng cáo</h3>
+      <p>Chúng tôi sử dụng các nhà cung cấp bên thứ ba đáng tin cậy để nâng cao trải nghiệm của bạn và duy trì chức năng ứng dụng:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> Để cung cấp quảng cáo cá nhân hóa và không cá nhân hóa.</li>
+        <li><strong>Firebase (Google):</strong> Để phân tích, lưu trữ đám mây và giám sát hiệu suất ứng dụng.</li>
+      </ul>
+
+      <h3>4. Quyền người dùng & Xóa tài khoản</h3>
+      <p>Tùy thuộc vào vị trí của bạn, bạn có quyền truy cập, chỉnh sửa hoặc yêu cầu bản sao dữ liệu cá nhân của mình. Bạn có thể rút lại sự đồng ý đối với quảng cáo cá nhân hóa thông qua Cài đặt ứng dụng hoặc cài đặt hệ điều hành thiết bị của bạn.</p>
+      <p><strong>Xóa tài khoản:</strong> Bạn có thể xóa vĩnh viễn tài khoản và tất cả dữ liệu liên quan trực tiếp trong ứng dụng bằng cách vào <em>Cài đặt > Tài khoản > Xóa tài khoản</em> hoặc liên hệ với chúng tôi.</p>
+
+      <h3>5. Bảo mật dữ liệu & Quyền riêng tư của trẻ em</h3>
+      <p>Chúng tôi sử dụng các biện pháp bảo vệ kỹ thuật tiêu chuẩn ngành. Ứng dụng không dành cho trẻ em dưới 13 tuổi (hoặc 16 tuổi ở một số khu vực pháp lý). Chúng tôi không cố ý thu thập dữ liệu cá nhân từ trẻ em.</p>
+
+      <h2>Điều khoản Dịch vụ</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. Miễn trừ trách nhiệm Y tế (Quan trọng)</strong><br>
+        TU — Mindful Companion cung cấp các công cụ thiền và nội dung chăm sóc sức khỏe cho mục đích giáo dục và thông tin. Chúng tôi <strong>không</strong> phải là nhà cung cấp dịch vụ y tế. Ứng dụng của chúng tôi <strong>không</strong> nhằm mục đích chẩn đoán, điều trị hoặc chữa khỏi bất kỳ tình trạng sức khỏe tâm thần hay bệnh lý thể chất nào. Luôn tìm kiếm lời khuyên từ chuyên gia y tế có chuyên môn cho bất kỳ mối quan tâm y tế nào.
+      </div>
+
+      <h3>2. Gói đăng ký & Thanh toán</h3>
+      <p>Nếu bạn mua gói đăng ký Premium, việc thanh toán được quản lý an toàn thông qua Apple App Store hoặc Google Play Store.</p>
+      <ul>
+        <li><strong>Gia hạn tự động:</strong> Gói đăng ký sẽ tự động gia hạn trừ khi bị hủy ít nhất 24 giờ trước khi kết thúc chu kỳ thanh toán hiện tại.</li>
+        <li><strong>Hoàn tiền:</strong> Tất cả các yêu cầu hoàn tiền phải được xử lý trực tiếp thông qua các nền tảng App Store tương ứng và tuân theo chính sách của họ.</li>
+      </ul>
+
+      <h3>3. Hành vi người dùng & Nội dung không phù hợp (Chính sách UGC)</h3>
+      <p>Bằng cách sử dụng ứng dụng, bạn đồng ý <strong>KHÔNG</strong> tải lên nội dung bất hợp pháp, gây hại, xúc phạm hoặc vi phạm bản quyền và không quấy rối người dùng khác.</p>
+      <ul>
+        <li><strong>Không khoan nhượng:</strong> Chúng tôi áp dụng chính sách không khoan nhượng đối với nội dung không phù hợp và hành vi lạm dụng ứng dụng.</li>
+        <li><strong>Báo cáo & Chặn:</strong> Người dùng có thể gắn cờ/báo cáo trực tiếp nội dung hoặc hành vi không phù hợp và chặn những người dùng lạm dụng ngay trong ứng dụng.</li>
+        <li><strong>Thực thi:</strong> Chúng tôi sẽ xem xét các báo cáo và bảo lưu quyền xóa nội dung và cấm/trục xuất những người dùng vi phạm các điều khoản này trong vòng 24 giờ kể từ khi nhận được báo cáo.</li>
+      </ul>
+
+      <h3>4. Giới hạn trách nhiệm</h3>
+      <p>Ứng dụng được cung cấp "nguyên trạng" và "theo khả năng hiện có". Trong phạm vi tối đa mà pháp luật cho phép, chúng tôi sẽ không chịu trách nhiệm cho bất kỳ thiệt hại gián tiếp, vô ý hoặc hệ quả nào phát sinh từ việc sử dụng ứng dụng.</p>
+
+      <h3>Liên hệ với chúng tôi</h3>
+      <p>Nếu bạn có thắc mắc hoặc mối quan tâm về các chính sách này, vui lòng liên hệ với chúng tôi tại: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-de" class="lang-section">
+      <p><strong>Zuletzt aktualisiert:</strong> März 2026</p>
+      
+      <h2>Datenschutzrichtlinie</h2>
+      <p>Diese Datenschutzrichtlinie erklärt, wie <strong>TU — Mindful Companion</strong> ("wir", "uns" oder "unser") Ihre Informationen erfasst, verwendet und schützt. Durch die Nutzung der App stimmen Sie der Erfassung und Nutzung Ihrer Informationen gemäß dieser Richtlinie zu.</p>
+      
+      <h3>1. Erfasste Informationen</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>Kontoinformationen</strong>
+          <ul>
+            <li>E-Mail-Adresse & Anzeigename</li>
+            <li>Authentifizierungsdaten (über Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Meditation & Persönliche Daten</strong>
+          <ul>
+            <li>Sitzungsverlauf & Dauer</li>
+            <li>Persönliche Tagebucheinträge</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Gerät & Kennungen</strong>
+          <ul>
+            <li>IDFA (iOS) / Werbe-ID (Android)</li>
+            <li>Anonyme Absturzprotokolle</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Datenschutzhinweis:</strong> Ihre Tagebucheinträge werden als streng vertraulich behandelt. Wir verkaufen, scannen oder nutzen Ihre privaten Reflexionen nicht für Werbezwecke.
+      </div>
+
+      <h3>2. Audio, Kommunikation & Nutzerinhalte</h3>
+      <ul>
+        <li><strong>Gruppenmeditation:</strong> Sprachkommunikation wird in Echtzeit übertragen. Wir zeichnen Ihre Sprachgespräche nicht auf und speichern sie nicht, es sei denn, dies wird für eine bestimmte Funktion ausdrücklich angegeben.</li>
+        <li><strong>Nutzerinhalte:</strong> Sie sind allein dafür verantwortlich, sicherzustellen, dass von Ihnen hochgeladene Audioinhalte oder andere Inhalte keine geistigen Eigentumsrechte Dritter verletzen.</li>
+      </ul>
+
+      <h3>3. Dienste von Drittanbietern & Werbung</h3>
+      <p>Wir verwenden vertrauenswürdige Drittanbieter, um Ihr Erlebnis zu verbessern und die App-Funktionalität aufrechtzuerhalten:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> Zur Bereitstellung von personalisierter und nicht personalisierter Werbung.</li>
+        <li><strong>Firebase (Google):</strong> Für Analysen, Cloud-Speicher und App-Leistungsüberwachung.</li>
+      </ul>
+
+      <h3>4. Nutzerrechte & Kontolöschung</h3>
+      <p>Abhängig von Ihrem Standort haben Sie das Recht auf Zugang, Korrektur oder eine Kopie Ihrer persönlichen Daten. Sie können die Zustimmung für personalisierte Werbung über die App-Einstellungen oder die Betriebssystem-Einstellungen Ihres Geräts widerrufen.</p>
+      <p><strong>Kontolöschung:</strong> Sie können Ihr Konto und alle zugehörigen Daten dauerhaft direkt in der App löschen, indem Sie zu <em>Einstellungen &gt; Konto &gt; Konto löschen</em> gehen, oder indem Sie uns kontaktieren.</p>
+
+      <h3>5. Datensicherheit & Datenschutz von Kindern</h3>
+      <p>Wir wenden branchenübliche technische Sicherheitsmaßnahmen an. Die App ist nicht für Kinder unter 13 Jahren (bzw. 16 in bestimmten Gerichtsbarkeiten) bestimmt. Wir erfassen wissentlich keine personenbezogenen Daten von Kindern.</p>
+
+      <h2>Nutzungsbedingungen</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. Medizinischer Haftungsausschluss (Wichtig)</strong><br>
+        TU — Mindful Companion bietet Meditationswerkzeuge und Wellness-Inhalte nur zu Bildungs- und Informationszwecken an. Wir sind <strong>kein</strong> medizinischer oder Gesundheitsdienstleister. Unsere App ist <strong>nicht</strong> dazu gedacht, psychische Erkrankungen oder körperliche Beschwerden zu diagnostizieren, zu behandeln oder zu heilen. Suchen Sie stets den Rat eines qualifizierten Arztes bei allen medizinischen Fragen.
+      </div>
+
+      <h3>2. Abonnements & Zahlungen</h3>
+      <p>Wenn Sie ein Premium-Abonnement erwerben, erfolgt die Abrechnung sicher über den Apple App Store oder den Google Play Store.</p>
+      <ul>
+        <li><strong>Automatische Verlängerung:</strong> Abonnements verlängern sich automatisch, es sei denn, sie werden mindestens 24 Stunden vor Ablauf des aktuellen Abrechnungszeitraums gekündigt.</li>
+        <li><strong>Rückerstattungen:</strong> Alle Rückerstattungsanfragen müssen direkt über die jeweiligen App-Store-Plattformen und gemäß deren Richtlinien abgewickelt werden.</li>
+      </ul>
+
+      <h3>3. Nutzerverhalten & Anstößige Inhalte (UGC-Richtlinie)</h3>
+      <p>Durch die Nutzung der App stimmen Sie zu, <strong>KEINE</strong> illegalen, schädlichen, anstößigen oder urheberrechtsverletzenden Inhalte hochzuladen sowie andere Nutzer weder zu belästigen noch zu stören.</p>
+      <ul>
+        <li><strong>Null-Toleranz:</strong> Wir verfolgen eine Null-Toleranz-Politik für anstößige Inhalte oder missbräuchliche Nutzer.</li>
+        <li><strong>Melden & Blockieren:</strong> Nutzer können unangemessene Inhalte oder Verhaltensweisen markieren/melden und missbräuchliche Nutzer direkt in der App blockieren.</li>
+        <li><strong>Durchsetzung:</strong> Wir prüfen Meldungen und behalten uns das Recht vor, Inhalte zu entfernen und Nutzer, die gegen diese Bedingungen verstoßen, innerhalb von 24 Stunden nach einer Meldung zu sperren/bannen.</li>
+      </ul>
+
+      <h3>4. Haftungsbeschränkung</h3>
+      <p>Die App wird "WIE BESEHEN" und "WIE VERFÜGBAR" bereitgestellt. Im größtmöglichen gesetzlich zulässigen Umfang haften wir nicht für indirekte, zufällige oder Folgeschäden, die aus Ihrer Nutzung der App entstehen.</p>
+
+      <h3>Kontakt</h3>
+      <p>Wenn Sie Fragen oder Bedenken zu diesen Richtlinien haben, kontaktieren Sie uns bitte unter: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-fr" class="lang-section">
+      <p><strong>Dernière mise à jour:</strong> Mars 2026</p>
+      
+      <h2>Politique de Confidentialité</h2>
+      <p>Cette Politique de Confidentialité explique comment <strong>TU — Mindful Companion</strong> ("nous", "notre" ou "nos") collecte, utilise et protège vos informations. En utilisant l'Application, vous acceptez la collecte et l'utilisation de vos informations conformément à cette politique.</p>
+      
+      <h3>1. Informations que nous collectons</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>Informations du compte</strong>
+          <ul>
+            <li>Adresse e-mail et nom d'affichage</li>
+            <li>Identifiants de connexion (via Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Méditation & Données personnelles</strong>
+          <ul>
+            <li>Historique et durée des sessions</li>
+            <li>Entrées du journal personnel</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Appareil & Identifiants</strong>
+          <ul>
+            <li>IDFA (iOS) / ID publicitaire (Android)</li>
+            <li>Rapports de plantage anonymes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Note sur la confidentialité:</strong> Vos entrées de journal sont traitées comme hautement sensibles. Nous ne vendons, n'analysons ni n'utilisons vos réflexions privées à des fins publicitaires.
+      </div>
+
+      <h3>2. Audio, Communication & Contenu utilisateur</h3>
+      <ul>
+        <li><strong>Méditation de groupe:</strong> La communication vocale est transmise en temps réel. Nous n'enregistrons ni ne stockons vos conversations vocales sauf indication explicite pour une fonctionnalité spécifique.</li>
+        <li><strong>Contenu utilisateur:</strong> Vous êtes seul responsable de vous assurer que tout audio ou contenu que vous téléchargez ne viole pas les droits de propriété intellectuelle de tiers.</li>
+      </ul>
+
+      <h3>3. Services tiers & Publicité</h3>
+      <p>Nous utilisons des fournisseurs tiers de confiance pour améliorer votre expérience et maintenir les fonctionnalités de l'App:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> Pour diffuser des publicités personnalisées et non personnalisées.</li>
+        <li><strong>Firebase (Google):</strong> Pour les analyses, le stockage cloud et la surveillance des performances de l'App.</li>
+      </ul>
+
+      <h3>4. Droits des utilisateurs & Suppression de compte</h3>
+      <p>Selon votre localisation, vous avez le droit d'accéder, de corriger ou de demander une copie de vos données personnelles. Vous pouvez retirer votre consentement pour la publicité personnalisée via les paramètres de l'App ou les paramètres du système d'exploitation de votre appareil.</p>
+      <p><strong>Suppression de compte:</strong> Vous pouvez supprimer définitivement votre compte et toutes les données associées directement dans l'Application en allant dans <em>Paramètres &gt; Compte &gt; Supprimer le compte</em>, ou en nous contactant.</p>
+
+      <h3>5. Sécurité des données & Confidentialité des enfants</h3>
+      <p>Nous mettons en œuvre des mesures de sécurité techniques conformes aux normes de l'industrie. L'Application n'est pas destinée aux enfants de moins de 13 ans (ou 16 ans dans certaines juridictions). Nous ne collectons pas sciemment de données personnelles auprès d'enfants.</p>
+
+      <h2>Conditions d'Utilisation</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. Avis médical (Important)</strong><br>
+        TU — Mindful Companion fournit des outils de méditation et des contenus de bien-être uniquement à des fins éducatives et informatives. Nous <strong>ne sommes pas</strong> un professionnel de la santé. Notre Application <strong>N'EST PAS</strong> destinée à diagnostiquer, traiter ou guérir une quelconque condition de santé mentale ou maladie physique. Demandez toujours l'avis d'un professionnel de la santé qualifié pour toute question médicale.
+      </div>
+
+      <h3>2. Abonnements & Paiements</h3>
+      <p>Si vous souscrivez à un abonnement premium, la facturation est gérée de manière sécurisée via l'Apple App Store ou le Google Play Store.</p>
+      <ul>
+        <li><strong>Renouvellement automatique:</strong> Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période de facturation en cours.</li>
+        <li><strong>Remboursements:</strong> Toutes les demandes de remboursement doivent être traitées directement via les plateformes respectives (App Store), sous réserve de leurs politiques.</li>
+      </ul>
+
+      <h3>3. Conduite de l'utilisateur & Contenus répréhensibles (Politique UGC)</h3>
+      <p>En utilisant l'Application, vous acceptez de <strong>NE PAS</strong> télécharger de contenu illégal, préjudiciable, offensant ou violant le droit d'auteur, et de ne pas harceler ou perturber les autres utilisateurs.</p>
+      <ul>
+        <li><strong>Tolérance Zéro:</strong> Nous avons une politique de tolérance zéro pour les contenus répréhensibles ou les utilisateurs abusifs.</li>
+        <li><strong>Signalement et Blocage:</strong> Les utilisateurs peuvent signaler les contenus ou comportements inappropriés et bloquer les utilisateurs abusifs directement dans l'application.</li>
+        <li><strong>Application:</strong> Nous examinerons les signalements et nous nous réservons le droit de supprimer du contenu et de bannir/exclure les utilisateurs qui violent ces conditions dans les 24 heures suivant un signalement.</li>
+      </ul>
+
+      <h3>4. Limitation de responsabilité</h3>
+      <p>L'Application est fournie "EN L'ÉTAT" et "SELON LA DISPONIBILITÉ". Dans toute la mesure permise par la loi, nous ne serons pas responsables des dommages indirects, accessoires ou consécutifs découlant de votre utilisation de l'Application.</p>
+
+      <h3>Contactez-nous</h3>
+      <p>Si vous avez des questions concernant ces politiques, veuillez nous contacter à l'adresse suivante: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-es" class="lang-section">
+      <p><strong>Última actualización:</strong> Marzo 2026</p>
+      
+      <h2>Política de Privacidad</h2>
+      <p>Esta Política de Privacidad explica cómo <strong>TU — Mindful Companion</strong> ("nosotros", "nos" o "nuestro") recopila, utiliza y protege su información. Al utilizar la App, usted acepta la recopilación y el uso de su información de acuerdo con esta política.</p>
+      
+      <h3>1. Información que recopilamos</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>Información de la cuenta</strong>
+          <ul>
+            <li>Dirección de correo electrónico y nombre</li>
+            <li>Credenciales de autenticación (vía Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Meditación & Datos personales</strong>
+          <ul>
+            <li>Historial y duración de las sesiones</li>
+            <li>Entradas de diario personal</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Dispositivo e Identificadores</strong>
+          <ul>
+            <li>IDFA (iOS) / ID de publicidad (Android)</li>
+            <li>Registros anónimos de fallos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Nota de Privacidad:</strong> Las entradas de su diario se tratan como altamente sensibles. No vendemos, escaneamos ni usamos sus reflexiones privadas con fines publicitarios.
+      </div>
+
+      <h3>2. Audio, Comunicación y Contenido del Usuario</h3>
+      <ul>
+        <li><strong>Meditación en grupo:</strong> La comunicación por voz se transmite en tiempo real. No grabamos ni almacenamos sus conversaciones de voz a menos que se indique explícitamente para una función específica.</li>
+        <li><strong>Contenido del usuario:</strong> Usted es el único responsable de asegurar que cualquier audio o contenido que cargue no viole los derechos de propiedad intelectual de terceros.</li>
+      </ul>
+
+      <h3>3. Servicios de terceros y Publicidad</h3>
+      <p>Usamos proveedores de terceros de confianza para mejorar su experiencia y mantener la funcionalidad de la App:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> Para mostrar publicidad personalizada y no personalizada.</li>
+        <li><strong>Firebase (Google):</strong> Para análisis, almacenamiento en la nube y monitorización del rendimiento de la App.</li>
+      </ul>
+
+      <h3>4. Derechos del usuario y Eliminación de la cuenta</h3>
+      <p>Dependiendo de su ubicación, tiene derecho a acceder, corregir o solicitar una copia de sus datos personales. Puede retirar el consentimiento para la publicidad personalizada a través de la configuración de la App o del SO de su dispositivo.</p>
+      <p><strong>Eliminación de la cuenta:</strong> Puede eliminar permanentemente su cuenta y todos los datos asociados directamente dentro de la App yendo a <em>Ajustes &gt; Cuenta &gt; Eliminar cuenta</em>, o contactándonos.</p>
+
+      <h3>5. Seguridad de datos y Privacidad de los niños</h3>
+      <p>Implementamos salvaguardias técnicas estándar de la industria. La App no está dirigida a niños menores de 13 años (o 16 en ciertas jurisdicciones). No recopilamos conscientemente datos personales de menores.</p>
+
+      <h2>Términos de Servicio</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. Descargo de Responsabilidad Médica (Importante)</strong><br>
+        TU — Mindful Companion proporciona herramientas de meditación y contenido de bienestar solo con fines educativos e informativos. <strong>No</strong> somos proveedores de atención médica. Nuestra App <strong>NO</strong> está destinada a diagnosticar, tratar o curar ninguna condición de salud mental o enfermedad física. Busque siempre el consejo de un profesional de la salud calificado para cualquier consulta médica.
+      </div>
+
+      <h3>2. Suscripciones y Pagos</h3>
+      <p>Si compra una suscripción premium, la facturación se maneja de forma segura a través de la Apple App Store o Google Play Store.</p>
+      <ul>
+        <li><strong>Renovación Automática:</strong> Las suscripciones se renuevan automáticamente a menos que se cancelen al menos 24 horas antes del fin del período de facturación actual.</li>
+        <li><strong>Reembolsos:</strong> Todas las solicitudes de reembolso deben procesarse directamente a través de las respectivas plataformas de la App Store, sujetas a sus políticas.</li>
+      </ul>
+
+      <h3>3. Conducta del usuario y Contenido objetable (Política Creada por el Usuario UGC)</h3>
+      <p>Al utilizar la App, usted acepta <strong>NO</strong> cargar contenido ilegal, dañino, ofensivo o que infrinja los derechos de autor, ni acosar o molestar a otros usuarios.</p>
+      <ul>
+        <li><strong>Tolerancia Cero:</strong> Tenemos una política de tolerancia cero hacia el contenido objetable o los usuarios abusivos.</li>
+        <li><strong>Reporte y Bloqueo:</strong> Los usuarios pueden marcar/reportar contenido o comportamiento inapropiado y bloquear a usuarios abusivos directamente en la aplicación.</li>
+        <li><strong>Aplicación:</strong> Revisaremos los reportes y nos reservamos el derecho de eliminar el contenido y expulsar/bloquear a los usuarios que violen estos términos dentro de las 24 horas siguientes a un reporte.</li>
+      </ul>
+
+      <h3>4. Limitación de Responsabilidad</h3>
+      <p>La App se proporciona "TAL CUAL" y "SEGÚN DISPONIBILIDAD". En la máxima medida permitida por la ley, no seremos responsables por ningún daño indirecto, incidental o consecuente derivado del uso de la App.</p>
+
+      <h3>Contáctenos</h3>
+      <p>Si tiene alguna pregunta o inquietud sobre estas políticas, contáctenos en: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-it" class="lang-section">
+      <p><strong>Ultimo aggiornamento:</strong> Marzo 2026</p>
+      
+      <h2>Informativa sulla Privacy</h2>
+      <p>Questa Informativa sulla Privacy spiega come <strong>TU — Mindful Companion</strong> ("noi", "ci" o "nostro") raccoglie, utilizza e protegge le tue informazioni. Utilizzando l'App, acconsenti alla raccolta e all'uso delle tue informazioni in conformità con questa politica.</p>
+      
+      <h3>1. Informazioni che raccogliamo</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>Informazioni sull'Account</strong>
+          <ul>
+            <li>Indirizzo email e nome visualizzato</li>
+            <li>Credenziali di autenticazione (tramite Firebase)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Meditazione & Dati Personali</strong>
+          <ul>
+            <li>Cronologia e durata delle sessioni</li>
+            <li>Diario personale</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>Dispositivo e Identificatori</strong>
+          <ul>
+            <li>IDFA (iOS) / ID pubblicitario (Android)</li>
+            <li>Registri anonimi degli arresti anomali</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Nota sulla Privacy:</strong> Le tue annotazioni sul diario sono trattate come dati altamente sensibili. Non vendiamo, scansioniamo né usiamo le tue riflessioni private per scopi pubblicitari.
+      </div>
+
+      <h3>2. Audio, Comunicazione e Contenuti utente</h3>
+      <ul>
+        <li><strong>Meditazione di Gruppo:</strong> La comunicazione vocale viene trasmessa in tempo reale. Non registriamo o conserviamo le conversazioni vocali a meno che non sia esplicitamente dichiarato per una funzione specifica.</li>
+        <li><strong>Contenuto dell'utente:</strong> Sei l'unico responsabile di garantire che qualsiasi audio o contenuto caricato non violi i diritti di proprietà intellettuale di terzi.</li>
+      </ul>
+
+      <h3>3. Servizi di Terze Parti e Pubblicità</h3>
+      <p>Utilizziamo fornitori di terze parti di fiducia per migliorare la tua esperienza ed il funzionamento dell'App:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> Per mostrare pubblicità personalizzata e non personalizzata.</li>
+        <li><strong>Firebase (Google):</strong> Per le analisi, l'archiviazione cloud e il monitoraggio delle prestazioni dell'App.</li>
+      </ul>
+
+      <h3>4. Diritti dell'utente ed Eliminazione dell'Account</h3>
+      <p>A seconda della tua posizione, hai il diritto di accedere, correggere o richiedere una copia dei tuoi dati personali. Puoi revocare il consenso per la pubblicità personalizzata tramite le impostazioni dell'App o del sistema operativo del tuo dispositivo.</p>
+      <p><strong>Cancellazione dell'Account:</strong> Puoi eliminare permanentemente il tuo account e tutti i dati associati direttamente all'interno dell'App andando in <em>Impostazioni &gt; Account &gt; Elimina account</em>, oppure contattandoci.</p>
+
+      <h3>5. Sicurezza dei dati e Privacy dei bambini</h3>
+      <p>Adottiamo misure di sicurezza tecniche standard per il settore. L'App non è destinata a bambini al di sotto dei 13 anni (o 16 in alcune giurisdizioni). Non raccogliamo intenzionalmente dati personali di minori.</p>
+
+      <h2>Termini di Servizio</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. Disclaimer Medico (Importante)</strong><br>
+        TU — Mindful Companion fornisce strumenti di meditazione e contenuti per il benessere esclusivamente a scopo educativo ed informativo. <strong>Non</strong> siamo fornitori di servizi sanitari. La nostra App <strong>NON</strong> è destinata a diagnosticare, trattare o curare alcun disturbo mentale o malattia fisica. Per qualsiasi dubbio medico, rivolgiti sempre al consiglio di un professionista sanitario qualificato.
+      </div>
+
+      <h3>2. Abbonamenti e Pagamenti</h3>
+      <p>Se acquisti un abbonamento premium, la fatturazione viene gestita in modo sicuro tramite Apple App Store o Google Play Store.</p>
+      <ul>
+        <li><strong>Rinnovo Automatico:</strong> Gli abbonamenti si rinnovano automaticamente a meno che non vengano annullati almeno 24 ore prima dell'inizio del nuovo periodo di fatturazione.</li>
+        <li><strong>Rimborsi:</strong> Tutte le richieste di rimborso devono essere elaborate direttamente attraverso le rispettive piattaforme di App Store, in conformità con le loro politiche.</li>
+      </ul>
+
+      <h3>3. Condotta dell'Utente e Contenuti Inappropriati (Politica UGC)</h3>
+      <p>Utilizzando l'App, accetti di <strong>NON</strong> caricare contenuti illegali, dannosi, offensivi o che violino i diritti d'autore, e di non molestare o infastidire gli altri utenti.</p>
+      <ul>
+        <li><strong>Tolleranza Zero:</strong> Abbiamo una politica di tolleranza zero nei confronti dei contenuti inappropriati e degli abusi dell'App.</li>
+        <li><strong>Segnalazione e Blocco:</strong> Gli utenti possono segnalare contenuti o comportamenti inappropriati e bloccare altri utenti direttamente dall'App.</li>
+        <li><strong>Esecuzione:</strong> Ci riserviamo il diritto di esaminare le segnalazioni e di rimuovere contenuti e bannare/espellere gli utenti che violano questi termini entro 24 ore dalla segnalazione.</li>
+      </ul>
+
+      <h3>4. Limitazione di Responsabilità</h3>
+      <p>L'App è fornita "così com'è" e "come disponibile". Nella misura massima consentita dalla legge, non saremo responsabili per eventuali danni indiretti, incidentali o consequenziali derivanti dall'utilizzo dell'App.</p>
+
+      <h3>Contattaci</h3>
+      <p>Per domande o dubbi su questi termini, contattaci a <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-ja" class="lang-section">
+      <p><strong>最終更新日：</strong> 2026年3月</p>
+      
+      <h2>プライバシーポリシー</h2>
+      <p>このプライバシーポリシーでは、<strong>TU — Mindful Companion</strong>（以下「当社」といいます）がお客様の情報をどのように収集、使用、および保護するかを説明します。本アプリを使用することにより、お客様はこのポリシーに従った情報の収集と使用に同意するものとします。</p>
+      
+      <h3>1. 収集する情報</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>アカウント情報</strong>
+          <ul>
+            <li>メールアドレスと表示名</li>
+            <li>認証情報（Firebase Auth経由）</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>瞑想と個人データ</strong>
+          <ul>
+            <li>セッション履歴と期間</li>
+            <li>個人のジャーナルエントリ</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>デバイスと識別子</strong>
+          <ul>
+            <li>IDFA (iOS) / 広告 ID (Android)</li>
+            <li>匿名のクラッシュログ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>プライバシーに関する注意：</strong> あなたのジャーナルエントリは機密情報として扱われます。当社が広告目的であなたの個人的な記録を販売、スキャン、または利用することはありません。
+      </div>
+
+      <h3>2. 音声、通信、およびユーザーコンテンツ</h3>
+      <ul>
+        <li><strong>グループ瞑想：</strong> 音声通信はリアルタイムで送信されます。特定の機能のために明示的に記載されていない限り、音声会話を録音または保存することはありません。</li>
+        <li><strong>ユーザーコンテンツ：</strong> アップロードする音声やコンテンツが第三者の知的財産権を侵害していないことを保証する責任は、お客様単独にあります。</li>
+      </ul>
+
+      <h3>3. サードパーティサービスと広告</h3>
+      <p>ユーザー体験を向上させ、アプリの機能を維持するために、信頼できるサードパーティプロバイダーを使用しています：</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> パーソナライズされた広告および非パーソナライズ広告の配信。</li>
+        <li><strong>Firebase (Google):</strong> 分析、クラウドストレージ、アプリのパフォーマンス監視のため。</li>
+      </ul>
+
+      <h3>4. ユーザーの権利とアカウントの削除</h3>
+      <p>お住まいの地域によっては、お客様はご自身の個人データにアクセス、修正、またはそのコピーを要求する権利を有します。パーソナライズ広告に対する同意は、アプリの設定またはデバイスのOS設定を通じて撤回することができます。</p>
+      <p><strong>アカウントの削除：</strong> <em>設定 &gt; アカウント &gt; アカウント削除</em>に移動するか、当社に連絡することで、アプリ内で直接アカウントとすべての関連データを完全に削除できます。</p>
+
+      <h3>5. データセキュリティと子供のプライバシー</h3>
+      <p>業界標準の技術的保護措置を講じています。本アプリは、13歳未満（特定の管轄区域では16歳未満）の子供を対象としていません。子供から故意に個人データを収集することはありません。</p>
+
+      <h2>利用規約</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. 免責事項（重要）</strong><br>
+        TU — Mindful Companion は、教育および情報提供のみを目的として、瞑想ツールとウェルネスコンテンツを提供します。当社は医療機関では<strong>ありません</strong>。当社のアプリは、精神的または身体的な病気の診断、治療、または治癒を目的としたものでは<strong>ありません</strong>。医学的な問題については常に資格のある医療専門家の助言を求めてください。
+      </div>
+
+      <h3>2. サブスクリプションと支払い</h3>
+      <p>プレミアムサブスクリプションを購入された場合、請求はApple App StoreまたはGoogle Play Storeを通じて安全に行われます。</p>
+      <ul>
+        <li><strong>自動更新：</strong> 現在の請求期間が終了する少なくとも24時間前にキャンセルされない限り、サブスクリプションは自動的に更新されます。</li>
+        <li><strong>払い戻し：</strong> 払い戻しの要求はすべて、各アプリストアのプラットフォームを通じて、そのポリシーに従って処理される必要があります。</li>
+      </ul>
+
+      <h3>3. ユーザーの行動と不適切なコンテンツ（UGCポリシー）</h3>
+      <p>アプリを使用することにより、違法、有害、攻撃的、または著作権を侵害するコンテンツをアップロード<strong>しない</strong>こと、および他のユーザーへの嫌がらせや迷惑行為を行わないことに同意するものとします。</p>
+      <ul>
+        <li><strong>ゼロトレランス：</strong> 当社は、不適切なコンテンツや悪質なユーザーに対してゼロトレランス（一切容認しない）ポリシーを採用しています。</li>
+        <li><strong>報告とブロック：</strong> ユーザーはアプリ内で直接、不適切なコンテンツや行動を報告し、悪質なユーザーをブロックすることができます。</li>
+        <li><strong>執行：</strong> 当社は報告を確認し、違反と判断された場合、報告から24時間以内にコンテンツを削除し、規約を違反したユーザーを追放/BANする権利を留保します。</li>
+      </ul>
+
+      <h3>4. 責任の制限</h3>
+      <p>当アプリは「現状有姿」かつ「利用可能な限度」で提供されます。法律で認められる最大の範囲で、当社は、アプリの利用から生じたいかなる間接的、付随的、または派生的な損害についても責任を負いません。</p>
+
+      <h3>お問い合わせ</h3>
+      <p>これらのポリシーに関する質問や懸念がある場合は、<a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a>までお問い合わせください。</p>
+    </div>
+
+    <div id="lang-ko" class="lang-section">
+      <p><strong>최근 업데이트:</strong> 2026년 3월</p>
+      
+      <h2>개인정보 처리방침</h2>
+      <p>본 개인정보 처리방침은 <strong>TU — Mindful Companion</strong>("당사" 또는 "우리")이 귀하의 정보를 어떻게 수집, 사용, 보호하는지 설명합니다. 앱을 사용함으로써 귀하는 이 정책에 따른 정보 수집 및 사용에 동의하게 됩니다。</p>
+      
+      <h3>1. 수집하는 정보</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>계정 정보</strong>
+          <ul>
+            <li>이메일 주소 및 표시 이름</li>
+            <li>인증 자격 증명 (Firebase Auth 사용)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>명상 및 개인 데이터</strong>
+          <ul>
+            <li>세션 기록 및 진행 시간</li>
+            <li>개인 일기장 항목</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>기기 및 식별자</strong>
+          <ul>
+            <li>IDFA (iOS) / 광고 ID (Android)</li>
+            <li>익명 충돌 로그</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>개인정보 유의사항:</strong> 귀하의 일기 항목은 매우 민감한 정보로 취급됩니다. 당사는 광고 목적으로 귀하의 개인적인 기록을 판매, 스캔 또는 이용하지 않습니다.
+      </div>
+
+      <h3>2. 음성, 통신 및 사용자 콘텐츠</h3>
+      <ul>
+        <li><strong>그룹 명상:</strong> 음성 통신은 실시간으로 전송됩니다. 특정 기능에 대해 명시적으로 안내된 경우를 제외하고는 음성 대화를 녹음하거나 저장하지 않습니다.</li>
+        <li><strong>사용자 콘텐츠:</strong> 업로드하는 모든 오디오나 콘텐츠가 제3자의 지적 재산권을 침해하지 않도록 보장하는 책임은 전적으로 귀하에게 있습니다.</li>
+      </ul>
+
+      <h3>3. 타사 서비스 및 광고</h3>
+      <p>당사는 사용자 경험을 개선하고 앱 기능을 유지하기 위해 신뢰할 수 있는 타사 제공업체를 사용합니다:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> 개인 맞춤형 및 비 맞춤형 광고 제공.</li>
+        <li><strong>Firebase (Google):</strong> 분석, 클라우드 스토리지 및 앱 성능 모니터링 용도.</li>
+      </ul>
+
+      <h3>4. 사용자 권리 및 계정 삭제</h3>
+      <p>거주 지역에 따라 귀하는 본인의 개인 데이터에 접근, 수정 또는 그 사본을 요청할 권리가 있습니다. 앱 설정이나 기기의 OS 설정을 통해 맞춤형 광고에 대한 동의를 철회할 수 있습니다.</p>
+      <p><strong>계정 삭제:</strong> <em>설정 &gt; 계정 &gt; 계정 삭제</em>로 이동하거나 당사에 문의하여 앱 내에서 계정과 모든 관련 데이터를 영구적으로 직접 삭제할 수 있습니다.</p>
+
+      <h3>5. 데이터 보안 및 어린이의 개인정보</h3>
+      <p>우리는 업계 표준 기술 보안 장치를 적용하고 있습니다. 본 앱은 13세 (일부 관할권의 경우 16세) 미만의 어린이를 대상으로 하지 않습니다. 우리는 13세 미만의 어린이로부터 개인정보를 고의로 수집하지 않습니다.</p>
+
+      <h2>이용 약관</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. 의료 관련 면책 조항 (중요)</strong><br>
+        TU — Mindful Companion은 교육 및 정보 제공 목적으로만 명상 도구와 웰니스 콘텐츠를 제공합니다. 당사는 의료 또는 건강 관리 제공자가 <strong>아닙니다</strong>. 저희 앱은 어떤 정신 질환이나 신체적 질병을 진단, 치료, 또는 완치하기 위한 목적으로 만들어지지 <strong>않았습니다</strong>. 의학적 문제나 상태에 대해서는 항상 자격을 갖춘 의료 전문가의 조언 고 구하십시오.
+      </div>
+
+      <h3>2. 구독 및 결제</h3>
+      <p>프리미엄 구독을 구매하는 경우 결제는 Apple App Store 또는 Google Play Store를 통해 안전하게 처리됩니다.</p>
+      <ul>
+        <li><strong>자동 갱신:</strong> 현재 결제 주기가 끝나기 최소 24시간 전에 취소하지 않으면 구독이 자동으로 갱신됩니다.</li>
+        <li><strong>환불:</strong> 모든 환불 요청은 각 앱 스토어 플랫폼의 정책에 따라 스토어를 통해 직접 처리되어야 합니다.</li>
+      </ul>
+
+      <h3>3. 사용자 행동 및 부적절한 콘텐츠 (UGC 정책)</h3>
+      <p>앱을 사용함으로써 귀하는 불법적이거나, 유해하거나, 공격적이고나, 저작권을 침해하는 콘텐츠를 업로드하지 <strong>않을 것</strong>과 다른 사용자를 괴롭히거나 방해하지 않을 것에 동의합니다.</p>
+      <ul>
+        <li><strong>무관용 원칙 (Zero Tolerance):</strong> 당사는 부적절한 콘텐츠나 악성 사용자에 대해 절대 타협하지 않는 무관용 정책을 시행합니다.</li>
+        <li><strong>신고 및 차단:</strong> 사용자는 앱 내에서 직접 부적절한 콘텐츠나 행동을 신고하고, 악성 사용자를 차단할 수 있습니다.</li>
+        <li><strong>정책 시행:</strong> 당사는 신고 내용을 검토하며, 이러한 약관을 위반한 콘텐츠를 삭제하고 규정 위반 사용자를 신고 접수 후 24시간 이내에 차단/제명할 권리를 보유합니다.</li>
+      </ul>
+
+      <h3>4. 책임의 한계</h3>
+      <p>본 앱은 "있는 그대로" 그리고 "이용 가능한 상태 그대로" 제공됩니다. 법이 허용하는 최대 한도 내에서, 당사는 귀하의 앱 사용으로 인해 발생하는 간접적, 우발적 또는 결과적 손해에 대해 책임지지 않습니다.</p>
+
+      <h3>문의하기</h3>
+      <p>해당 방침이나 조항에 관한 질문이나 우려 사항이 있으시다면 언제든 <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a>으로 연락해주세요.</p>
+    </div>
+
+    <div id="lang-zh" class="lang-section">
+      <p><strong>最后更新：</strong> 2026年3月</p>
+      
+      <h2>隐私政策</h2>
+      <p>本隐私政策解释了 <strong>TU — Mindful Companion</strong>（“我们”或“我们的”）如何收集、使用和保护您的信息。使用本应用程序即表示您同意我们按照本政策收集和使用您的信息。</p>
+      
+      <h3>1. 我们收集的信息</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>账户信息</strong>
+          <ul>
+            <li>电子邮件地址和显示名称</li>
+            <li>身份验证凭据（通过 Firebase Auth）</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>冥想及个人数据</strong>
+          <ul>
+            <li>冥想历史记录和持续时间</li>
+            <li>个人日记条目</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>设备与标识符</strong>
+          <ul>
+            <li>IDFA (iOS) / 广告 ID (Android)</li>
+            <li>匿名崩溃日志</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>隐私说明：</strong> 您的日记记录被视为高度敏感信息。我们绝不会为了广告目的出售、扫描或使用您的私人反思记录。
+      </div>
+
+      <h3>2. 语音、通信和用户内容</h3>
+      <ul>
+        <li><strong>团体冥想：</strong> 语音通信将实时传输。除非某项特定功能明确声明，否则我们不会录制或存储您的语音对话。</li>
+        <li><strong>用户内容：</strong> 您全权负责确保您上传的任何音频或内容不侵犯第三方的知识产权。</li>
+      </ul>
+
+      <h3>3. 第三方服务和广告</h3>
+      <p>我们使用受信任的第三方提供商来增强您的体验并维持应用程序的功能：</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> 用于提供个性化及非个性化的广告。</li>
+        <li><strong>Firebase (Google):</strong> 用于分析、云存储和应用性能监控。</li>
+      </ul>
+
+      <h3>4. 用户权利与账户删除</h3>
+      <p>根据您所在地区，您有权访问、更正或索取个人数据的副本。您可以通过应用程序设置或您的设备系统设置撤回对个性化广告的同意。</p>
+      <p><strong>删除账户：</strong> 您可以通过前往<em>设置 &gt; 帐户 &gt; 删除帐户</em>，或联系我们，直接在应用内永久删除您的帐户及所有相关数据。</p>
+
+      <h3>5. 数据安全与儿童隐私</h3>
+      <p>我们采用行业标准的技术保障措施。应用程序不面向 13 岁（某些司法管辖区为 16 岁）以下的儿童，我们不会有意收集儿童的个人数据。</p>
+
+      <h2>服务条款</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. 医疗免责声明（重要）</strong><br>
+        TU — Mindful Companion 提供冥想工具和健康内容，仅供教育和参考之用。我们<strong>不</strong>是医疗或医疗保健提供商。我们的应用<strong>不</strong>打算诊断、治疗或治愈任何心理健康状况或身体疾病。关于任何医疗状况，请务必咨询合资格的医疗保健提供者。
+      </div>
+
+      <h3>2. 订阅与付款</h3>
+      <p>如果您购买高级订阅，账单将通过 Apple App Store 或 Google Play Store 安全地处理。</p>
+      <ul>
+        <li><strong>自动续订：</strong> 除非在当前计费期结束前至少 24 小时取消，否则订阅将自动续订。</li>
+        <li><strong>退款：</strong> 所有退款请求必须直接通过相应的应用商店平台处理，并受其政策约束。</li>
+      </ul>
+
+      <h3>3. 用户行为与不良内容（用户生成内容政策 UGC）</h3>
+      <p>使用本应用程序，即代表您同意<strong>不</strong>上传非法、有害、攻击性或侵犯版权的内容，也不骚扰或干扰其他用户。</p>
+      <ul>
+        <li><strong>零容忍政策：</strong> 我们对不良内容和滥用应用行为采取零容忍态度。</li>
+        <li><strong>举报与屏蔽：</strong> 用户可以直接在应用内标记/举报不当内容或行为，并屏蔽违规用户。</li>
+        <li><strong>执行措施：</strong> 我们将审查用户的举报，并保留在接获举报后 24 小时内移除内容及封禁/驱逐违反条款的用户的权利。</li>
+      </ul>
+
+      <h3>4. 责任限制</h3>
+      <p>应用程序按“原样”和“可用状态”提供。在法律允许的最大范围内，我们对因您使用应用程序而产生的任何间接、偶然或后果性损害不承担责任。</p>
+
+      <h3>联系我们</h3>
+      <p>如果您对这些政策有任何疑问或疑虑，请通过 <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a> 联系我们。</p>
+    </div>
+
+    <div id="lang-th" class="lang-section">
+      <p><strong>อัปเดตล่าสุด:</strong> มีนาคม 2026</p>
+      
+      <h2>นโยบายความเป็นส่วนตัว</h2>
+      <p>นโยบายความเป็นส่วนตัวนี้อธิบายว่า <strong>TU — Mindful Companion</strong> ("เรา" หรือ "ของเรา") รวบรวม ใช้ และปกป้องข้อมูลของคุณอย่างไร การใช้แอปพลิเคชันหมายความว่าคุณตกลงที่จะให้เรารวบรวมและใช้ข้อมูลตามนโยบายนี้</p>
+      
+      <h3>1. ข้อมูลที่เรารวบรวม</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>ข้อมูลบัญชี</strong>
+          <ul>
+            <li>ที่อยู่อีเมล และ ชื่อที่แสดง</li>
+            <li>ข้อมูลการยืนยันตัวตน (ผ่าน Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>การทำสมาธิ และ ข้อมูลส่วนบุคคล</strong>
+          <ul>
+            <li>ประวัติระยะเวลาการทำสมาธิ</li>
+            <li>รายการบันทึกประจำวันของส่วนตัว</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>อุปกรณ์ และ ตัวระบุ</strong>
+          <ul>
+            <li>IDFA (iOS) / ID โฆษณา (Android)</li>
+            <li>บันทึกข้อขัดข้องของแอปแบบไม่ระบุตัวตน</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>หมายเหตุเกี่ยวกับความเป็นส่วนตัว:</strong> บันทึกส่วนตัวของคุณได้รับการดูแลให้เป็นความลับสูงสุด เราไม่ได้ขาย สแกน หรือใช้การสะท้อนความคิดส่วนตัวของคุณเพื่อวัตถุประสงค์ในการโฆษณา
+      </div>
+
+      <h3>2. เสียง การสื่อสาร และ เนื้อหาของผู้ใช้</h3>
+      <ul>
+        <li><strong>การทำสมาธิแบบกลุ่ม:</strong> การสื่อสารด้วยเสียงจะส่งข้อมูลในเวลาจริง เราไม่บันทึกหรือเก็บการสนทนาด้วยเสียงของคุณเว้นแต่จะมีการระบุไว้ชัดเจนสำหรับฟีเจอร์บางอย่าง</li>
+        <li><strong>เนื้อหาของผู้ใช้:</strong> คุณต้องรับผิดชอบแต่เพียงผู้เดียวในการตรวจสอบให้แน่ใจว่าเสียงหรือเนื้อหาใด ๆ ที่คุณอัปโหลดไม่ละเมิดสิทธิ์ในทรัพย์สินทางปัญญาของบุคคลที่สาม</li>
+      </ul>
+
+      <h3>3. บริการจากบุคคลที่สาม และ การโฆษณา</h3>
+      <p>เราใช้บริการจากบุคคลที่สามที่เชื่อถือได้เพื่อยกระดับประสบการณ์ของคุณและรักษาการทำงานของแอป:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> ในการให้บริการโฆษณาแบบปรับให้ตรงตามความสนใจและไม่ได้ปรับตามความสนใจ</li>
+        <li><strong>Firebase (Google):</strong> สำหรับการวิเคราะห์ การเก็บรักษาข้อมูลในระบบคลาวด์ และตรวจสอบประสิทธิภาพของแอป</li>
+      </ul>
+
+      <h3>4. สิทธิ์ของผู้ใช้ และ การลบบัญชี</h3>
+      <p>ขึ้นอยู่กับภูมิลำเนาของคุณ คุณมีสิทธิ์ในการเข้าถึง แก้ไข หรือขอสำเนาข้อมูลส่วนตัว คุณสามารถเพิกถอนการยินยอมสำหรับการโฆษณาที่ปรับให้ตรงตามความสนใจผ่านการตั้งค่าในแอป หรือการตั้งค่าของ OS ของอุปกรณ์ของคุณ</p>
+      <p><strong>การลบบัญชี:</strong> คุณสามารถลบบัญชีและข้อมูลที่เกี่ยวข้องทั้งหมดอย่างถาวรโดยตรงภายในแอป โดยไปที่ <em>การตั้งค่า &gt; บัญชี &gt; ลบบัญชี</em> หรือโดยการติดต่อเรา</p>
+
+      <h3>5. ความปลอดภัยของข้อมูล และ ความเป็นส่วนตัวของเด็ก</h3>
+      <p>เราใช้มาตรการทางเทคนิคเพื่อความปลอดภัยที่ได้มาตรฐานอุตสาหกรรม แอปนี้ไม่ได้มีเจตนาให้ใช้งานโดยเด็กที่มีอายุต่ำกว่า 13 ปี (หรือ 16 ปีในเขตอำนาจศาลบางแห่ง) เราไม่ได้เก็บข้อมูลของเด็กอย่างรู้เท่าทัน</p>
+
+      <h2>ข้อกำหนดการให้บริการ</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. ข้อจำกัดความรับผิดทางแพทย์ (สำคัญ)</strong><br>
+        TU — Mindful Companion เป็นเครื่องมือสำหรับการทำสมาธิและมีเนื้อหาเพื่อสุขภาพซึ่งมีไว้ใช้เพื่อการศึกษาและให้ข้อมูลเท่านั้น เรา <strong>ไม่ได้</strong> เป็นผู้ให้บริการด้านการแพทย์ หรือ การดูแลสุขภาพ แอปของเรา <strong>ไม่ได้</strong> มุ่งหมายให้ใช้เพื่อวินิจฉัย บำบัด รักษา สภาวะทางสุขภาพจิต หรือ โรคทางกายใดๆ โปรดปรึกษาผู้เชี่ยวชาญด้านการดูแลสุขภาพเสมอ หากมีปัญหาเกี่ยวกับข้อสงสัยทางการแพทย์
+      </div>
+
+      <h3>2. การสมัครสมาชิก และ การชำระเงิน</h3>
+      <p>หากคุณซื้อการสมัครสมาชิกแบบพรีเมียม การเรียกเก็บเงินจะจัดการอย่างปลอดภัยผ่าน Apple App Store หรือ Google Play Store</p>
+      <ul>
+        <li><strong>การต่ออายุอัตโนมัติ:</strong> การสมัครสมาชิกจะต่ออายุโดยอัตโนมัติยกเว้นแต่จะมีการยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบบิลปัจจุบัน</li>
+        <li><strong>การขอคืนเงิน:</strong> คำขอคืนเงินทั้งหมดจะต้องดำเนินการผ่านแฟลตฟอร์ม App Store ของแต่ละรายและอยู่ภายใต้นโยบายของร้านค้านั้น ๆ</li>
+      </ul>
+
+      <h3>3. ข้อปฏิบัติของผู้ใช้ และ เนื้อหาที่ไม่เหมาะสม (นโยบายเกี่ยวกับ UGC)</h3>
+      <p>เมื่อใช้แอปนี้ คุณตกลงที่จะ <strong>ไม่</strong> อัปโหลดเนื้อหาที่ผิดกฎหมาย เป็นอันตราย ไม่เหมาะสม ละเมิดลิขสิทธิ์ และคุณรับรองว่าจะไม่คุกคามหรือรบกวนผู้ใช้อื่น</p>
+      <ul>
+        <li><strong>นโยบายไม่อะลุ้มอล่วย:</strong> เราใช้นโยบายแบบไม่อะลุ้มอล่วยเด็ดขาดหากพบเนื้อหาที่ไม่เหมาะสม หรือการใช้งานในทางมิชอบ</li>
+        <li><strong>การรายงาน และ บล็อก:</strong> ผู้ใช้สามารถระบุหรือรายงานเนื้อหาหรือพฤติกรรมที่ไม่เหมาะสม และบล็อกผู้ใช้ที่มีการกระทำที่ไม่เหมาะสมได้โดยตรงจากภายในแอป</li>
+        <li><strong>การดำเนินการ:</strong> เราจะตรวจสอบรายงานที่ได้รับและสงวนสิทธิ์ที่จะลบเนื้อหาและบล็อก/แบนผู้ใช้ที่ละเมิดเงื่อนไขเหล่านี้ภายใน 24 ชั่วโมงหลังจากได้รับการรายงาน</li>
+      </ul>
+
+      <h3>4. ขีดจำกัดความรับผิดชอบ</h3>
+      <p>แอปนี้มีให้บริการในรูปแบบ "ตามสภาพ (AS IS)" และ "ตามที่มี (AS AVAILABLE)" ในขอบเขตสูงสุดที่กฎหมายอนุญาต เราจะไม่รับผิดสำหรับความเสียหายที่เกิดขึ้นทางอ้อม เพื่อการลงโทษ อย่างเป็นผลสืบเนื่อง ที่มาจากการใช้งานแอป</p>
+
+      <h3>ติดต่อเรา</h3>
+      <p>หากคุณมีคำถาม หรือข้อกังวลเกี่ยวกับนโยบายนี้ โปรดติดต่อเราได้ที่: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+
+    <div id="lang-my" class="lang-section">
+      <p><strong>နောက်ဆုံးပြင်ဆင်ချက်:</strong> မတ်လ ၂၀၂၆</p>
+
+      <h2>ကိုယ်ရေးအချက်အလက်မူဝါဒ</h2>
+      <p>ဤကိုယ်ရေးအချက်အလက်မူဝါဒတွင် <strong>TU — Mindful Companion</strong> ("ကျွန်ုပ်တို့") သည် သင့်အချက်အလက်များကို မည်သို့ စုဆောင်း၊ အသုံးပြု နှင့် ကာကွယ်ကြောင်း ရှင်းလင်းဖော်ပြထားပါသည်။ အက်ပ်ကိုအသုံးပြုခြင်းဖြင့် ဤမူဝါဒနှင့် အညီ သင့်အချက်အလက်များ စုဆောင်းပြီး အသုံးပြုရန် သဘောတူကြောင်း သတ်မှတ်ပါသည်။</p>
+
+      <h3>၁။ ကျွန်ုပ်တို့ စုဆောင်းသောအချက်အလက်များ</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>အကောင့်အချက်အလက်</strong>
+          <ul>
+            <li>အီးမေးလ်လိပ်စာနှင့် ပြသမည့်နာမည်</li>
+            <li>Firebase Auth မှတဆင့် အတည်ပြုချက်</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>တရားထိုင်မှုနှင့် ကိုယ်ရေးအချက်အလက်</strong>
+          <ul>
+            <li>Session မှတ်တမ်းနှင့် ကြာချိန်</li>
+            <li>ကိုယ်ပိုင် ဒိုင်ယာရီ မှတ်တမ်းများ</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>စက်ပစ္စည်းနှင့် ID</strong>
+          <ul>
+            <li>IDFA (iOS) / ကြော်ငြာ ID (Android)</li>
+            <li>အမည်မသိ ပျက်စီးမှု မှတ်တမ်းများ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>ကိုယ်ရေးအချက်အလက် မှတ်ချက်:</strong> သင့်ဒိုင်ယာရီ မှတ်တမ်းများကို အလွန်အရေးကြီးသော ကိုယ်ရေးအချက်အလက်အဖြစ် ဆောင်ရွက်ပါသည်။ ကြော်ငြာရည်ရွယ်ချက်ဖြင့် သင်၏ ကိုယ်ပိုင် မှတ်တမ်းများကို ရောင်းချခြင်း၊ စစ်ဆေးခြင်း သို့မဟုတ် အသုံးပြုခြင်း လုံးဝ မပြုလုပ်ပါ။
+      </div>
+
+      <h3>၂။ အသံ၊ ဆက်သွယ်ရေးနှင့် အသုံးပြုသူ အကြောင်းအရာ</h3>
+      <ul>
+        <li><strong>အုပ်စု တရားထိုင်မှု:</strong> အသံဆက်သွယ်ရေးကို တိုက်ရိုက် လွှင့်ထုတ်သည်။ သီးသန့် ဖော်ပြထားသည့် လုပ်ဆောင်ချက်တစ်ခုအတွက် မဟုတ်လျှင် အသံ ကဏ္ဍများကို မှတ်တမ်းတင်ခြင်း သို့မဟုတ် သိမ်းဆည်းခြင်း မပြုသည်။</li>
+        <li><strong>အသုံးပြုသူ အကြောင်းအရာ:</strong> သင် တင်သည့် အသံ သို့မဟုတ် အကြောင်းအရာ တစ်ခုခုသည် တတိယပါတီ၏ မူပိုင်ခွင့်အခွင့်အရေးကို မချိုးဖောက်ကြောင်း သေချာစေရန် သင်တစ်ဦးတည်း တာဝန်ရှိသည်။</li>
+      </ul>
+
+      <h3>၃။ တတိယပါတီ ဝန်ဆောင်မှုများနှင့် ကြော်ငြာ</h3>
+      <p>သင့်အတွေ့အကြုံကို မြင့်မားစေပြီး အက်ပ်၏ လုပ်ဆောင်ချက်ကို ထိန်းသိမ်းရန် ယုံကြည်ရသော တတိယပါတီ ပံ့ပိုးသူများကို အသုံးပြုသည်:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> ကိုယ်ပိုင်ပြုလုပ်ထားသော နှင့် ကိုယ်ပိုင်မပြုလုပ်ထားသော ကြော်ငြာများ ပြသရန်။</li>
+        <li><strong>Firebase (Google):</strong> ပိုင်းခြားစိတ်ဖြာမှု၊ cloud သိမ်းဆည်းမှုနှင့် အက်ပ်စွမ်းဆောင်ရည် စောင့်ကြည့်မှုအတွက်။</li>
+      </ul>
+
+      <h3>၄။ အသုံးပြုသူ အခွင့်အရေးများနှင့် အကောင့် ဖျက်သိမ်းခြင်း</h3>
+      <p>သင်၏ တည်နေရာပေါ်မူတည်၍ သင့် ကိုယ်ရေးအချက်အလက်ကို ဝင်ရောက်ကြည့်ရှု၊ ပြင်ဆင် သို့မဟုတ် မိတ္တူ တောင်းခံပိုင်ခွင့် ရှိပါသည်။ အက်ပ် ဆက်တင်များ သို့မဟုတ် သင့်စက်ပစ္စည်း OS ဆက်တင်များမှတဆင့် ကိုယ်ပိုင်ပြုလုပ်ထားသော ကြော်ငြာ သဘောတူညီချက်ကို ပယ်ဖျက်နိုင်သည်။</p>
+      <p><strong>အကောင့် ဖျက်သိမ်းခြင်း:</strong> <em>ဆက်တင်များ &gt; အကောင့် &gt; အကောင့် ဖျက်မည်</em> သို့ သွားခြင်း သို့မဟုတ် ကျွန်ုပ်တို့ကို ဆက်သွယ်ခြင်းဖြင့် အကောင့်နှင့် ဆက်စပ်ဒေတာအားလုံးကို အပြီးအပိုင် ဖျက်သိမ်းနိုင်သည်။</p>
+
+      <h3>၅။ ဒေတာ လုံခြုံရေးနှင့် ကလေးများ၏ ကိုယ်ရေးအချက်အလက်</h3>
+      <p>လုပ်ငန်းနယ်ပယ် စံနှုန်းသတ်မှတ်ချက် နည်းပညာ လုံခြုံရေး အစီအမံများကို အသုံးပြုသည်။ ဤအက်ပ်ကို အသက် ၁၃ နှစ် (အချို့ တရားစီရင်ပိုင်ခွင့် နယ်မြေတွင် ၁၆ နှစ်) အောက် ကလေးများ အတွက် ရည်ရွယ်မထားသည့်အတွက် ကလေးများ၏ ကိုယ်ရေးအချက်အလက်ကို ရည်ရွယ်ချင်း မစုဆောင်းပါ။</p>
+
+      <h2>ဝန်ဆောင်မှုစည်းကမ်းချက်များ</h2>
+
+      <div class="highlight-box alert">
+        <strong>၁။ ဆေးဘက်ဆိုင်ရာ ဆိုလိုအပ်ချက်ကင်းရှင်းကြောင်း ကြေညာချက် (အရေးကြီး)</strong><br>
+        TU — Mindful Companion သည် ပညာပေး နှင့် သတင်းအချက်အလက် ရည်ရွယ်ချက်ဖြင့်သာ တရားထိုင်မှု ကိရိယာများနှင့် ကျန်းမာရေးဆိုင်ရာ အကြောင်းအရာများ ပေးအပ်သည်။ ကျွန်ုပ်တို့သည် ကျန်းမာရေး ဝန်ဆောင်မှု ပေးသူ <strong>မဟုတ်ပါ</strong>။ ကျွန်ုပ်တို့၏ အက်ပ်သည် စိတ်ကျန်းမာရေး အခြေအနေ သို့မဟုတ် ရုပ်ပိုင်းဆိုင်ရာ ရောဂါကို ရှာဖွေ၊ ကုသ သို့မဟုတ် ပျောက်ကင်းစေရန် ရည်ရွယ်<strong>မထားပါ</strong>။ ဆေးဘက်ဆိုင်ရာ ပြဿနာများအတွက် အရည်အချင်းပြည့်ဝသော ကျန်းမာရေး ကျွမ်းကျင်သူ၏ အကြံဉာဏ်ကို အမြဲတမ်း ရှာဖွေပါ။
+      </div>
+
+      <h3>၂။ စာရင်းသွင်းမှုနှင့် ငွေပေးချေမှု</h3>
+      <p>Premium စာရင်းသွင်းမှု ဝယ်ယူပါက Apple App Store သို့မဟုတ် Google Play Store မှတဆင့် ငွေတောင်းခံမည်။</p>
+      <ul>
+        <li><strong>အလိုအလျောက် သက်တမ်းတိုးခြင်း:</strong> လက်ရှိ ငွေတောင်းচ期 ကုန်ဆုံးမည့် အနည်းဆုံး ၂၄ နာရီ မတိုင်မီ ပယ်ဖျက်မထားလျှင် စာရင်းသွင်းမှု အလိုအလျောက် သက်တမ်းတိုးသည်။</li>
+        <li><strong>ငွေပြန်အမ်းမှု:</strong> ငွေပြန်အမ်းရန် တောင်းဆိုမှုများကို သက်ဆိုင်ရာ App Store ပလက်ဖောင်းများ၏ မူဝါဒနှင့် အညီ ၎င်းတို့မှတဆင့် တိုက်ရိုက် ဆောင်ရွက်ရမည်။</li>
+      </ul>
+
+      <h3>၃။ အသုံးပြုသူ အပြုအမူနှင့် မသင့်တော်သောအကြောင်းအရာ (UGC မူဝါဒ)</h3>
+      <p>အက်ပ်ကို အသုံးပြုခြင်းဖြင့် တရားမဝင်၊ အန္တရာယ်ရှိ၊ ဆိုးဆိုးဝါးဝါး သို့မဟုတ် မူပိုင်ခွင့် ချိုးဖောက်သော အကြောင်းအရာများ <strong>မတင်ရန်</strong> နှင့် အခြားအသုံးပြုသူများကို နှောင့်ယှက်ခြင်း <strong>မပြုရန်</strong> သဘောတူပါသည်။</p>
+      <ul>
+        <li><strong>Zero Tolerance:</strong> မသင့်တော်သောအကြောင်းအရာနှင့် အက်ပ် အလွဲသုံးမှုများအပေါ် လုံးဝ လက်မခံသောမူဝါဒ ကျင့်သုံးသည်။</li>
+        <li><strong>အစီရင်ခံမှုနှင့် ပိတ်ဆို့မှု:</strong> အသုံးပြုသူများသည် အက်ပ်တွင်းမှ တိုက်ရိုက် မသင့်တော်သောအကြောင်းအရာ သို့မဟုတ် အပြုအမူများကို အစီရင်ခံပြီး ဆိုးသောအသုံးပြုသူများကို ပိတ်ဆို့နိုင်သည်။</li>
+        <li><strong>အရေးယူဆောင်ရွက်မှု:</strong> အစီရင်ခံမှုများကို စစ်ဆေးပြီး ဤသတ်မှတ်ချက်များကို ချိုးဖောက်သောအကြောင်းအရာ ဖယ်ရှားရန် နှင့် ချိုးဖောက်သောအသုံးပြုသူများကို အစီရင်ခံပြီး ၂၄ နာရီအတွင်း ပိတ်ဆို့/နှင်ထုတ်ပိုင်ခွင့် ရှိသည်။</li>
+      </ul>
+
+      <h3>၄။ တာဝန်ယူမှု ကန့်သတ်ချက်</h3>
+      <p>ဤအက်ပ်ကို "ဖြစ်တည်ရှိသည့်အတိုင်း" နှင့် "ရရှိနိုင်သည့်အတိုင်း" ပေးသည်။ ဥပဒေ ခွင့်ပြုသည့် အများဆုံး အတိုင်းအတာတွင် အက်ပ် အသုံးပြုမှုမှ ဖြစ်ပေါ်သော သွယ်ဝိုက်သော၊ ဖြစ်လာသော သို့မဟုတ် ဆက်ဆံဆက်ပြောင်းသော ပျက်စီးဆုံးရှုံးမှုများအတွက် တာဝန်မယူပါ။</p>
+
+      <h3>ဆက်သွယ်ရန်</h3>
+      <p>ဤမူဝါဒများနှင့် ပတ်သက်သော မေးခွန်းများ သို့မဟုတ် စိုးရိမ်မှုများ ရှိပါက ကျွန်ုပ်တို့ကို ဆက်သွယ်ပါ: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-si" class="lang-section">
+      <p><strong>අවසන් යාවත්කාලීන:</strong> මාර්තු 2026</p>
+
+      <h2>රහස්‍යතා ප්‍රතිපත්තිය</h2>
+      <p>මෙම රහස්‍යතා ප්‍රතිපත්තිය <strong>TU — Mindful Companion</strong> ("අපි") ඔබේ තොරතුරු එකතු කරන, භාවිතා කරන සහ ආරක්ෂා කරන ආකාරය විස්තර කරයි. යෙදුම භාවිතා කිරීමෙන් ඔබ මෙම ප්‍රතිපත්තිය යටතේ තොරතුරු එකතු කිරීමට සහ භාවිතා කිරීමට එකඟ වේ.</p>
+
+      <h3>1. අපි එකතු කරන තොරතුරු</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>ගිණුම් තොරතුරු</strong>
+          <ul>
+            <li>විද්‍යුත් තැපැල් ලිපිනය සහ දර්ශන නාමය</li>
+            <li>Firebase Auth හරහා සත්‍යාපන අක්තපත්‍ර</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>භාවනා සහ පෞද්ගලික දත්ත</strong>
+          <ul>
+            <li>සැසි ඉතිහාසය සහ කාලය</li>
+            <li>පෞද්ගලික දිනපොත් සටහන්</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>උපාංග සහ හඳුනාගැනීම</strong>
+          <ul>
+            <li>IDFA (iOS) / දැන්වීම් ID (Android)</li>
+            <li>නිර්නාමික බිඳවැටීම් ලොග</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>රහස්‍යතා සටහන:</strong> ඔබේ දිනපොත් සටහන් ඉතා සංවේදී දත්ත ලෙස සලකනු ලැබේ. ඔබේ පෞද්ගලික සිතුවිලි දැන්වීම් අරමුණු සඳහා අපි විකුණන්නේ නැත, පරිලෝකනය කරන්නේ නැත, හෝ භාවිතා කරන්නේ නැත.
+      </div>
+
+      <h3>2. ශ්‍රව්‍ය, සන්නිවේදනය සහ පරිශීලක අන්තර්ගතය</h3>
+      <ul>
+        <li><strong>කණ්ඩායම් භාවනාව:</strong> හඬ සන්නිවේදනය තත්කාලීනව සම්ප්‍රේෂණය වේ. නිශ්චිත කාර්යයක් සඳහා පැහැදිලිව සඳහන් නොකළහොත් හඬ සංවාද පටිගත කිරීමක් හෝ ගබඩා කිරීමක් නොකෙරේ.</li>
+        <li><strong>පරිශීලක අන්තර්ගතය:</strong> ඔබ උඩුගත කරන ශ්‍රව්‍ය හෝ අන්තර්ගතය තෙවන පාර්ශ්ව බුද්ධිමය දේපල අයිතිවාසිකම් උල්ලංඝනය නොකරන බව සහතික කිරීම ඔබේ පමණක් වගකීමකි.</li>
+      </ul>
+
+      <h3>3. තෙවන පාර්ශ්ව සේවා සහ දැන්වීම්</h3>
+      <p>ඔබේ අත්දැකීම වැඩිදියුණු කිරීමට සහ යෙදුමේ ක්‍රියාකාරිත්වය පවත්වා ගැනීමට විශ්වාසවන්ත තෙවන පාර්ශ්ව සපයන්නන් භාවිතා කරයි:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> පුද්ගලීකරණය කළ සහ නොකළ දැන්වීම් සේවය කිරීමට.</li>
+        <li><strong>Firebase (Google):</strong> විශ්ලේෂණ, වලාකුළු ගබඩාව සහ යෙදුම් ක්‍රියාකාරිත්ව අධීක්ෂණය සඳහා.</li>
+      </ul>
+
+      <h3>4. පරිශීලක අයිතිවාසිකම් සහ ගිණුම් මකා දැමීම</h3>
+      <p>ඔබේ ස්ථානය අනුව ඔබේ පෞද්ගලික දත්ත වෙත ප්‍රවේශ වීමට, නිවැරදි කිරීමට හෝ පිටපතක් ඉල්ලීමට ඔබට අයිතියක් ඇත. යෙදුම් සැකසුම් හෝ ඔබේ උපාංගයේ OS සැකසුම් හරහා පුද්ගලීකරණය කළ දැන්වීම් සඳහා අනුමැතිය ඉවත් කළ හැකිය.</p>
+      <p><strong>ගිණුම් මකා දැමීම:</strong> <em>සැකසුම් &gt; ගිණුම &gt; ගිණුම මකා දමන්න</em> වෙත ගොස් හෝ අප හා සම්බන්ධ වී ගිණුම සහ සියලු ආශ්‍රිත දත්ත ස්ථිරවම මකා දැමිය හැකිය.</p>
+
+      <h3>5. දත්ත ආරක්ෂාව සහ ළමා රහස්‍යතාව</h3>
+      <p>කර්මාන්ත-සම්මත තාක්ෂණික ආරක්ෂණ ක්‍රම භාවිතා කරයි. යෙදුම අවුරුදු 13 (සමහර අධිකරණ ප්‍රදේශවල 16) ට අඩු ළමුන් සඳහා අදහස් නොකෙරේ. ළමුන්ගෙන් හිතාමතා පෞද්ගලික දත්ත එකතු නොකරයි.</p>
+
+      <h2>සේවා නියමයන්</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. වෛද්‍ය වගකීම් ප්‍රතික්ෂේප කිරීම (වැදගත්)</strong><br>
+        TU — Mindful Companion අධ්‍යාපනික සහ තොරතුරු ආදිය සඳහා පමණක් භාවනා මෙවලම් සහ යහපැවැත්ම අන්තර්ගතය ලබා දෙයි. අපි <strong>නොවේ</strong> වෛද්‍ය සේවා සපයන්නෙකු. අපගේ යෙදුම මානසික රෝගාවස්ථා හෝ ශාරීරික රෝග හඳුනා ගැනීමට, ප්‍රතිකාර කිරීමට හෝ සුව කිරීමට අදහස් <strong>නොකෙරේ</strong>. ඕනෑම වෛද්‍ය ගැටලුවකදී සෑම විටම සුදුසුකම් ලත් සෞඛ්‍ය සේවා වෘත්තිකයකුගෙන් උපදෙස් ලබාගන්න.
+      </div>
+
+      <h3>2. දායකත්ව සහ ගෙවීම්</h3>
+      <p>ප්‍රිමියම් දායකත්වයක් මිල දී ගන්නේ නම් බිලිං Apple App Store හෝ Google Play Store හරහා ආරක්ෂිතව සිදු කෙරේ.</p>
+      <ul>
+        <li><strong>ස්වයංක්‍රීය අළුත් කිරීම:</strong> වත්මන් බිලිං කාලය අවසන් වීමට අවම වශයෙන් පැය 24 කට පෙර අවලංගු නොකළහොත් දායකත්ව ස්වයංක්‍රීයව අළුත් කෙරේ.</li>
+        <li><strong>මුදල් ආපසු ගෙවීම:</strong> සියලු මුදල් ආපසු ගෙවීමේ ඉල්ලීම් ඒ ඒ App Store ප්ලැට්ෆෝම හරහා ඒවායේ ප්‍රතිපත්ති ට අනුව සෘජුව ක්‍රියාත්මක කළ යුතුය.</li>
+      </ul>
+
+      <h3>3. පරිශීලක හැසිරීම සහ නුසුදුසු අන්තර්ගතය (UGC ප්‍රතිපත්තිය)</h3>
+      <p>යෙදුම භාවිතා කිරීමෙන් ඔබ නීති විරෝධී, හානිකර, ආක්‍රමණශීලී හෝ ප්‍රකාශන හිමිකම් කඩ කරන අන්තර්ගතය <strong>නොඇතුළත් කිරීමට</strong> සහ වෙනත් පරිශීලකයන් හිරිහැර <strong>නොකිරීමට</strong> එකඟ වේ.</p>
+      <ul>
+        <li><strong>ශුන්‍ය ඉවසීම:</strong> නුසුදුසු අන්තර්ගතය සහ යෙදුම් අවභාවිතා කිරීම සම්බන්ධයෙන් ශුන්‍ය ඉවසීමේ ප්‍රතිපත්තියක් ක්‍රියාත්මක කෙරේ.</li>
+        <li><strong>වාර්තා කිරීම සහ අවහිර කිරීම:</strong> පරිශීලකයන්ට යෙදුම තුළ සෘජුව නුසුදුසු අන්තර්ගතය හෝ හැසිරීම් වාර්තා කර හානිකර පරිශීලකයන් අවහිර කළ හැකිය.</li>
+        <li><strong>ක්‍රියාමාර්ග:</strong> වාර්තා ගසාකෑ ගෙන 24 පැය ඇතුළත මෙම නියමයන් කඩ කළ පරිශීලකයන් සහ අන්තර්ගතය ඉවත් කිරීමේ අයිතිය ඇත.</li>
+      </ul>
+
+      <h3>4. වගකීම් සීමාව</h3>
+      <p>යෙදුම "ඇති ආකාරයෙන්" සහ "ලබා ගත හැකි ආකාරයෙන්" ලබා දෙනු ලැබේ. නීතිය ඉඩ දෙන උපරිම ප්‍රමාණයෙන් යෙදුම භාවිතා කිරීමෙන් ඇති වන වක්‍ර, අකස්මාත් හෝ ප්‍රතිඵලාත්මක හානි සඳහා අපි වගකීමක් නොදරමු.</p>
+
+      <h3>අප අමතන්න</h3>
+      <p>මෙම ප්‍රතිපත්ති සම්බන්ධ ප්‍රශ්න හෝ ගැටලු ඇත්නම් අප හා සම්බන්ධ වන්න: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-km" class="lang-section">
+      <p><strong>កែប្រែចុងក្រោយ:</strong> ខែមីនា 2026</p>
+
+      <h2>គោលការណ៍ឯកជនភាព</h2>
+      <p>គោលការណ៍ឯកជនភាពនេះពន្យល់ពីរបៀបដែល <strong>TU — Mindful Companion</strong> ("យើង") ប្រមូល ប្រើប្រាស់ និងការពារព័ត៌មានរបស់អ្នក។ ការប្រើប្រាស់កម្មវិធីមានន័យថាអ្នកយល់ព្រមទៅនឹងការប្រមូល និងប្រើប្រាស់ព័ត៌មានតាមគោលការណ៍នេះ។</p>
+
+      <h3>1. ព័ត៌មានដែលយើងប្រមូល</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>ព័ត៌មានគណនី</strong>
+          <ul>
+            <li>អាសយដ្ឋានអ៊ីមែល និងឈ្មោះដែលបង្ហាញ</li>
+            <li>ព័ត៌មានបញ្ជាក់អត្តសញ្ញាណ (តាម Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>ការសំយោគ និងទិន្នន័យផ្ទាល់ខ្លួន</strong>
+          <ul>
+            <li>ប្រវត្តិ និងរយៈពេលនៃសម័យ</li>
+            <li>កំណត់ចំណាំប្រចាំថ្ងៃផ្ទាល់ខ្លួន</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>ឧបករណ៍ និងអត្តសញ្ញាណ</strong>
+          <ul>
+            <li>IDFA (iOS) / លេខសម្គាល់ការផ្សាយពាណិជ្ជកម្ម (Android)</li>
+            <li>កំណត់ហេតុការបរាជ័យដែលមិនមានឈ្មោះ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>កំណត់ចំណាំអំពីឯកជនភាព:</strong> កំណត់ចំណាំប្រចាំថ្ងៃរបស់អ្នកត្រូវបានចាត់ទុកជាទិន្នន័យរសើបខ្លាំង។ យើងមិនលក់ មិនស្កែន ឬប្រើការរំឭកផ្ទាល់ខ្លួនរបស់អ្នកសម្រាប់គោលបំណងផ្សាយពាណិជ្ជកម្មទេ។
+      </div>
+
+      <h3>2. សំឡេង ការទំនាក់ទំនង និងមាតិការបស់អ្នកប្រើ</h3>
+      <ul>
+        <li><strong>ការសំយោគជាក្រុម:</strong> ការប្រាស្រ័យទំនាក់ទំនងតាមសំឡេងត្រូវបានបញ្ជូនតាមពេលជាក់ស្តែង។ យើងមិនថតឬរក្សាទុកការសន្ទនាតាមសំឡេងទេ លុះត្រាតែបញ្ជាក់ច្បាស់ជាក់លាក់សម្រាប់លក្ខណៈពិសេសណាមួយ។</li>
+        <li><strong>មាតិការបស់អ្នកប្រើ:</strong> អ្នកទទួលខុសត្រូវតែម្នាក់ឯងក្នុងការធានាថាសំឡេង ឬមាតិកាណាដែលអ្នកផ្ទុកឡើងមិនរំលោភសិទ្ធិកម្មសិទ្ធិបញ្ញារបស់ភាគីទីបីទេ។</li>
+      </ul>
+
+      <h3>3. សេវាភាគីទីបី និងការផ្សាយពាណិជ្ជកម្ម</h3>
+      <p>យើងប្រើប្រាស់អ្នកផ្តល់ភាគីទីបីដែលគួរជឿទុកចិត្តដើម្បីបង្កើនបទពិសោធន៍របស់អ្នក និងថែរក្សាមុខងារកម្មវិធី:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> ដើម្បីបម្រើការផ្សាយពាណិជ្ជកម្មដែលបានកំណត់ផ្ទាល់ខ្លួន និងមិនបានកំណត់ផ្ទាល់ខ្លួន។</li>
+        <li><strong>Firebase (Google):</strong> សម្រាប់ការវិភាគ ការផ្ទុកក្លោដ និងការត្រួតពិនិត្យដំណើរការកម្មវិធី។</li>
+      </ul>
+
+      <h3>4. សិទ្ធិអ្នកប្រើ និងការលុបគណនី</h3>
+      <p>អាស្រ័យលើទីតាំងរបស់អ្នក អ្នកមានសិទ្ធិចូលប្រើ កែតំរូវ ឬស្នើសុំច្បាប់ចម្លងនៃទិន្នន័យផ្ទាល់ខ្លួន។ អ្នកអាចដកការយល់ព្រមសម្រាប់ការផ្សាយពាណិជ្ជកម្មដែលបានកំណត់ផ្ទាល់ខ្លួនតាមរយៈការកំណត់កម្មវិធី ឬការកំណត់ OS ឧបករណ៍របស់អ្នក។</p>
+      <p><strong>ការលុបគណនី:</strong> អ្នកអាចលុបគណនី និងទិន្នន័យដែលពាក់ព័ន្ធទាំងអស់ជាអចិន្ត្រៃយ៍ដោយផ្ទាល់ក្នុងកម្មវិធីដោយទៅ <em>ការកំណត់ &gt; គណនី &gt; លុបគណនី</em> ឬដោយទំនាក់ទំនងយើង។</p>
+
+      <h3>5. សុវត្ថិភាពទិន្នន័យ និងឯកជនភាពកុមារ</h3>
+      <p>យើងប្រើវិធានការសុវត្ថិភាពបច្ចេកទេសសម្រាប់ឧស្សាហកម្ម។ កម្មវិធីនេះមិនបានមានគោលបំណងសម្រាប់កុមារអាយុក្រោម 13 ឆ្នាំ (ឬ 16 ឆ្នាំក្នុងដែនសមត្ថកិច្ចមួយចំនួន)ទេ។ យើងមិនប្រមូលទិន្នន័យផ្ទាល់ខ្លួនពីកុមារដោយចេតនាទេ។</p>
+
+      <h2>លក្ខខណ្ឌសេវាកម្ម</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. ការបដិសេធទំនួលខុសត្រូវវេជ្ជសាស្ត្រ (សំខាន់)</strong><br>
+        TU — Mindful Companion ផ្តល់ឧបករណ៍សំយោគ និងខ្លឹមសារសុខភាពសម្រាប់គោលបំណងអប់រំ និងព័ត៌មានតែប៉ុណ្ណោះ។ យើង<strong>មិន</strong>មែនជាអ្នកផ្តល់សេវាសុខាភិបាលទេ។ កម្មវិធីរបស់យើង<strong>មិន</strong>មានបំណងធ្វើរោគវិនិច្ឆ័យ ព្យាបាល ឬព្យាបាលស្ថានភាពសុខភាពផ្លូវចិត្ត ឬជំងឺរាងកាយណាមួយទេ។ សម្រាប់ការព្រួយបារម្ភផ្នែកវេជ្ជសាស្ត្រ សូមស្វែងរកដំបូន្មានពីអ្នកជំនាញផ្នែកស្មមាន់ដែលមានសិក្ខាបទ។
+      </div>
+
+      <h3>2. ការជាវ និងការទូទាត់</h3>
+      <p>ប្រសិនបើអ្នកទិញការជាវពីមុខ ការចេញវិក្កយបត្រត្រូវបានគ្រប់គ្រងដោយសុវត្ថិភាពតាម Apple App Store ឬ Google Play Store។</p>
+      <ul>
+        <li><strong>ការបន្តដោយស្វ័យប្រវត្តិ:</strong> ការជាវបន្តដោយស្វ័យប្រវត្តិ លុះត្រាតែលុបចោលយ៉ាងហោចណាស់ 24 ម៉ោងមុនពេលបញ្ចប់រយៈពេលហ្វិនហ្វជរស់售ល់ជាបន្ត។</li>
+        <li><strong>ការសងប្រាក់វិញ:</strong> សំណើទាំងអស់ស្តីពីការសងប្រាក់វិញត្រូវដំណើរការដោយផ្ទាល់តាមប្លាតហ្វេន App Store ដែលពាក់ព័ន្ធ និងស្ថិតក្រោមគោលការណ៍របស់ពួកគេ។</li>
+      </ul>
+
+      <h3>3. ការប្រព្រឹត្តអ្នកប្រើ និងខ្លឹមសារមិនសមរម្យ (គោលការណ៍ UGC)</h3>
+      <p>ដោយប្រើប្រាស់កម្មវិធី អ្នកយល់ព្រម<strong>មិន</strong>ផ្ទុកឡើងខ្លឹមសារខុសច្បាប់ ប្រកបដោយគ្រោះថ្នាក់ ប្រឆាំង ឬរំលោភសិទ្ធិចម្លង ហើយមិនកួតគំរាម ឬប្រព្រឹត្តអ្នកប្រើផ្សេងទៀត។</p>
+      <ul>
+        <li><strong>គ្មានការអត់ធ្មត់:</strong> យើងអនុវត្តគោលការណ៍គ្មានការអត់ធ្មត់ ចំពោះខ្លឹមសារមិនសមរម្យ និងការប្រើប្រាស់កម្មវិធីខុសឆ្គង។</li>
+        <li><strong>ការរាយការណ៍ និងការបិទ:</strong> អ្នកប្រើអាចសម្គាល់/រាយការណ៍ខ្លឹមសារ ឬអាកប្បកិរិយាមិនសមរម្យ ហើយបិទអ្នកប្រើព្យាបាលដោយផ្ទាល់ពីក្នុងកម្មវិធី។</li>
+        <li><strong>ការអនុវត្ត:</strong> យើងនឹងពិនិត្យរាយការណ៍ ហើយរក្សាសិទ្ធិដកខ្លឹមសារ និងហាមឃាត់/ដេញអ្នកប្រើដែលរំលោភលក្ខខណ្ឌទាំងនេះក្នុងរយៈពេល 24 ម៉ោងបន្ទាប់ពីទទួលបានការប្តឹងតវ៉ា។</li>
+      </ul>
+
+      <h3>4. ការកំណត់ទំនួលខុសត្រូវ</h3>
+      <p>កម្មវិធីត្រូវបានផ្តល់ "ដូចដែលវាមាន" និង "ដូចដែលអាចរកបាន"។ ក្នុងវិសាលភាពអតិបរមាដែលច្បាប់អនុញ្ញាត យើងនឹងមិនទទួលខុសត្រូវចំពោះការខូចខាតដោយប្រយោល ការខូចខាតពិន័យ ឬការខូចខាតជាលទ្ធផលដែលកើតឡើងពីការប្រើប្រាស់កម្មវិធីទេ។</p>
+
+      <h3>ទំនាក់ទំនងយើង</h3>
+      <p>ប្រសិនបើអ្នកមានសំណួរ ឬការព្រួយបារម្ភអំពីគោលការណ៍ទាំងនេះ សូមទំនាក់ទំនងយើងតាម: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-ne" class="lang-section">
+      <p><strong>अन्तिम अपडेट:</strong> मार्च २०२६</p>
+
+      <h2>गोपनीयता नीति</h2>
+      <p>यो गोपनीयता नीतिले <strong>TU — Mindful Companion</strong> ("हामी") ले तपाईंको जानकारी कसरी सङ्कलन, उपयोग र सुरक्षित गर्छ भनेर व्याख्या गर्दछ। एप्लिकेसन प्रयोग गरेर तपाईं यो नीति अनुसारको जानकारी सङ्कलन र उपयोगमा सहमत हुनुहुन्छ।</p>
+
+      <h3>१. हामीले सङ्कलन गर्ने जानकारी</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>खाता जानकारी</strong>
+          <ul>
+            <li>इमेल ठेगाना र प्रदर्शन नाम</li>
+            <li>Firebase Auth मार्फत प्रमाणीकरण</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>ध्यान र व्यक्तिगत तथ्याङ्क</strong>
+          <ul>
+            <li>सत्र इतिहास र अवधि</li>
+            <li>व्यक्तिगत डायरी प्रविष्टिहरू</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>उपकरण र पहिचानकर्ता</strong>
+          <ul>
+            <li>IDFA (iOS) / विज्ञापन ID (Android)</li>
+            <li>अनामनिमित क्र्याश लगहरू</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>गोपनीयता नोट:</strong> तपाईंका डायरी प्रविष्टिहरूलाई अत्यन्त संवेदनशील तथ्याङ्कको रूपमा व्यवहार गरिन्छ। हामी विज्ञापन उद्देश्यका लागि तपाईंका व्यक्तिगत विचारहरू बेच्दैनौं, स्क्यान गर्दैनौं वा उपयोग गर्दैनौं।
+      </div>
+
+      <h3>२. अडियो, सञ्चार र प्रयोगकर्ता सामग्री</h3>
+      <ul>
+        <li><strong>समूह ध्यान:</strong> भ्वाइस सञ्चार वास्तविक समयमा प्रसारित हुन्छ। कुनै विशेष सुविधाका लागि स्पष्ट रूपमा उल्लेख नगरेसम्म हामी भ्वाइस कुराकानी रेकर्ड वा भण्डारण गर्दैनौं।</li>
+        <li><strong>प्रयोगकर्ता सामग्री:</strong> तपाईंले अपलोड गर्ने कुनै पनि अडियो वा सामग्रीले तेस्रो पक्षको बौद्धिक सम्पत्ति अधिकार उल्लंघन नगर्ने कुरा सुनिश्चित गर्ने जिम्मेवारी एकमात्र तपाईंको हो।</li>
+      </ul>
+
+      <h3>३. तेस्रो पक्ष सेवाहरू र विज्ञापन</h3>
+      <p>तपाईंको अनुभव सुधार गर्न र एपको कार्यक्षमता कायम राख्न हामी विश्वसनीय तेस्रो पक्ष प्रदायकहरू उपयोग गर्छौं:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> व्यक्तिगतकृत र गैर-व्यक्तिगतकृत विज्ञापनहरू सेवा गर्न।</li>
+        <li><strong>Firebase (Google):</strong> विश्लेषण, क्लाउड भण्डारण र एप प्रदर्शन अनुगमनका लागि।</li>
+      </ul>
+
+      <h3>४. प्रयोगकर्ता अधिकार र खाता मेटाउने</h3>
+      <p>तपाईंको स्थान अनुसार, तपाईंलाई आफ्नो व्यक्तिगत तथ्याङ्कमा पहुँच, सुधार वा प्रति माग्ने अधिकार छ। एप सेटिङ्स वा उपकरणको OS सेटिङ्स मार्फत व्यक्तिगतकृत विज्ञापनको लागि सहमति फिर्ता लिन सकिन्छ।</p>
+      <p><strong>खाता मेटाउने:</strong> <em>सेटिङ्स &gt; खाता &gt; खाता मेटाउने</em> मा गई वा हामीलाई सम्पर्क गरेर एपभित्रै सिधै खाता र सम्बद्ध सबै तथ्याङ्क स्थायी रूपमा मेटाउन सकिन्छ।</p>
+
+      <h3>५. तथ्याङ्क सुरक्षा र बालबालिकाको गोपनीयता</h3>
+      <p>हामी उद्योग-मानक प्राविधिक सुरक्षा उपायहरू प्रयोग गर्छौं। यो एप १३ वर्ष (केही क्षेत्राधिकारमा १६ वर्ष) मुनिका बालबालिकाका लागि अभिप्रेत छैन। हामी बालबालिकाको व्यक्तिगत तथ्याङ्क जानीजानी सङ्कलन गर्दैनौं।</p>
+
+      <h2>सेवाका सर्तहरू</h2>
+
+      <div class="highlight-box alert">
+        <strong>१. चिकित्सा अस्वीकरण (महत्त्वपूर्ण)</strong><br>
+        TU — Mindful Companion ले शैक्षिक र सूचनात्मक उद्देश्यका लागि मात्र ध्यान उपकरणहरू र स्वास्थ्य सामग्री प्रदान गर्दछ। हामी स्वास्थ्य सेवा प्रदायक <strong>होइनौं</strong>। हाम्रो एप कुनै पनि मानसिक स्वास्थ्य स्थिति वा शारीरिक रोगको निदान, उपचार वा निको पार्न <strong>अभिप्रेत छैन</strong>। कुनै पनि स्वास्थ्य सम्बन्धी चिन्ताका लागि सदैव योग्य स्वास्थ्य पेशेवरको सल्लाह लिनुहोस्।
+      </div>
+
+      <h3>२. सदस्यता र भुक्तानी</h3>
+      <p>प्रिमियम सदस्यता किन्नुभयो भने बिलिङ Apple App Store वा Google Play Store मार्फत सुरक्षित रूपमा व्यवस्थापन गरिन्छ।</p>
+      <ul>
+        <li><strong>स्वचालित नवीकरण:</strong> हालको बिलिङ अवधि समाप्त हुनुभन्दा कम्तीमा २४ घण्टा अघि रद्द नगरेसम्म सदस्यता स्वचालित रूपमा नवीकरण हुन्छ।</li>
+        <li><strong>फिर्ता:</strong> सबै फिर्ता अनुरोधहरू सम्बन्धित App Store प्लेटफार्महरू मार्फत तिनीहरूका नीति अनुसार प्रत्यक्ष रूपमा प्रशोधन गर्नुपर्छ।</li>
+      </ul>
+
+      <h3>३. प्रयोगकर्ता आचरण र अनुचित सामग्री (UGC नीति)</h3>
+      <p>एप प्रयोग गरेर तपाईं अवैध, हानिकारक, आपत्तिजनक वा प्रतिलिपि अधिकार उल्लंघन गर्ने सामग्री <strong>नअपलोड गर्न</strong> र अन्य प्रयोगकर्ताहरूलाई उत्पीडन <strong>नगर्न</strong> सहमत हुनुहुन्छ।</p>
+      <ul>
+        <li><strong>शून्य सहनशीलता:</strong> हामी अनुचित सामग्री र एप दुरुपयोगका विरुद्ध शून्य-सहनशीलता नीति लागू गर्छौं।</li>
+        <li><strong>रिपोर्ट र ब्लक:</strong> प्रयोगकर्ताहरू एपभित्रैबाट अनुचित सामग्री वा व्यवहार रिपोर्ट गर्न र दुर्व्यवहार गर्ने प्रयोगकर्ताहरू ब्लक गर्न सक्छन्।</li>
+        <li><strong>कार्यान्वयन:</strong> हामी रिपोर्टहरू समीक्षा गर्छौं र रिपोर्ट प्राप्त भएको २४ घण्टाभित्र यी सर्तहरू उल्लंघन गर्ने सामग्री हटाउने र प्रयोगकर्ताहरूलाई प्रतिबन्ध/निष्कासन गर्ने अधिकार सुरक्षित राख्छौं।</li>
+      </ul>
+
+      <h3>४. दायित्वको सीमा</h3>
+      <p>एप "जस्तो छ" र "उपलब्ध भएजति" प्रदान गरिन्छ। कानूनले अनुमति दिएको अधिकतम हदसम्म, एप प्रयोगबाट उत्पन्न हुने कुनै पनि अप्रत्यक्ष, आकस्मिक वा परिणामजन्य क्षतिका लागि हामी जिम्मेवार हुँदैनौं।</p>
+
+      <h3>सम्पर्क गर्नुहोस्</h3>
+      <p>यी नीतिहरूका बारेमा प्रश्न वा चिन्ता छन् भने हामीलाई सम्पर्क गर्नुहोस्: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+    <div id="lang-lo" class="lang-section">
+      <p><strong>ອັບເດດລ່າສຸດ:</strong> ມີນາ 2026</p>
+
+      <h2>ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</h2>
+      <p>ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວນີ້ອະທິບາຍວ່າ <strong>TU — Mindful Companion</strong> ("ພວກເຮົາ") ເກັບກຳ, ນຳໃຊ້ ແລະ ປົກປ້ອງຂໍ້ມູນຂອງທ່ານແນວໃດ. ການໃຊ້ແອັບພລິເຄຊັນໝາຍຄວາມວ່າທ່ານຕົກລົງກັບການເກັບກຳ ແລະ ນຳໃຊ້ຂໍ້ມູນຕາມນະໂຍບາຍນີ້.</p>
+
+      <h3>1. ຂໍ້ມູນທີ່ພວກເຮົາເກັບກຳ</h3>
+      <div class="data-grid">
+        <div class="data-card">
+          <strong>ຂໍ້ມູນບັນຊີ</strong>
+          <ul>
+            <li>ທີ່ຢູ່ອີເມວ ແລະ ຊື່ສະແດງ</li>
+            <li>ຂໍ້ມູນການຢັ້ງຢືນ (ຜ່ານ Firebase Auth)</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>ການນັ່ງສະມາທິ ແລະ ຂໍ້ມູນສ່ວນຕົວ</strong>
+          <ul>
+            <li>ປະຫວັດ ແລະ ໄລຍະເວລາຂອງ session</li>
+            <li>ບັນທຶກໄດອາຣີສ່ວນຕົວ</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <strong>ອຸປະກອນ ແລະ ຕົວລະບຸ</strong>
+          <ul>
+            <li>IDFA (iOS) / ID ໂຄສະນາ (Android)</li>
+            <li>ບັນທຶກການຂັດຂ້ອງທີ່ບໍ່ລະບຸຕົວຕົນ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>ໝາຍເຫດຄວາມເປັນສ່ວນຕົວ:</strong> ບັນທຶກໄດອາຣີຂອງທ່ານຖືກຈັດການເປັນຂໍ້ມູນລະອຽດອ່ອນສູງ. ພວກເຮົາບໍ່ຂາຍ, ບໍ່ສະແກນ ຫຼື ບໍ່ນຳໃຊ້ຄວາມຄິດສ່ວນຕົວຂອງທ່ານເພື່ອຈຸດປະສົງໂຄສະນາ.
+      </div>
+
+      <h3>2. ສຽງ, ການສື່ສານ ແລະ ເນື້ອຫາຂອງຜູ້ໃຊ້</h3>
+      <ul>
+        <li><strong>ການນັ່ງສະມາທິກຸ່ມ:</strong> ການສື່ສານດ້ວຍສຽງຖ່າຍທອດໃນເວລາຈິງ. ພວກເຮົາບໍ່ບັນທຶກ ຫຼື ເກັບຮັກສາການສົນທະນາດ້ວຍສຽງ ນອກຈາກຈະລະບຸຢ່າງຈະແຈ້ງສຳລັບຄຸນສົມບັດໃດ​ໜຶ່ງ.</li>
+        <li><strong>ເນື້ອຫາຂອງຜູ້ໃຊ້:</strong> ທ່ານຮັບຜິດຊອບຢ່າງດຽວໃນການຮັບປະກັນວ່າສຽງ ຫຼື ເນື້ອຫາໃດທີ່ທ່ານອັບໂຫລດບໍ່ລະເມີດສິດທິ​ທາງ​ປັນຍາຂອງພາກສ່ວນທີສາມ.</li>
+      </ul>
+
+      <h3>3. ບໍລິການພາກສ່ວນທີສາມ ແລະ ການໂຄສະນາ</h3>
+      <p>ພວກເຮົາໃຊ້ຜູ້ໃຫ້ບໍລິການພາກສ່ວນທີສາມທີ່ໜ້າເຊື່ອຖືເພື່ອເສີມຂະຫຍາຍປະສົບການ ແລະ ຮັກສາການທຳງານຂອງແອັບ:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> ເພື່ອໃຫ້ບໍລິການໂຄສະນາທີ່ປະຕິບັດຕາມ ແລະ ບໍ່ປະຕິບັດຕາມ.</li>
+        <li><strong>Firebase (Google):</strong> ສຳລັບການວິເຄາະ, ການເກັບຮັກສາ cloud ແລະ ການຕິດຕາມປະສິດທິພາບຂອງແອັບ.</li>
+      </ul>
+
+      <h3>4. ສິດຂອງຜູ້ໃຊ້ ແລະ ການລຶບບັນຊີ</h3>
+      <p>ຂຶ້ນຢູ່ກັບທີ່ຕັ້ງຂອງທ່ານ, ທ່ານມີສິດເຂົ້າເຖິງ, ແກ້ໄຂ ຫຼື ຮ້ອງຂໍສຳເນົາຂໍ້ມູນສ່ວນຕົວ. ທ່ານສາມາດຖອນການຍິນຍອມສຳລັບໂຄສະນາທີ່ປະຕິບັດຕາມໄດ້ຜ່ານການຕັ້ງຄ່າແອັບ ຫຼື ການຕັ້ງຄ່າ OS ຂອງອຸປະກອນທ່ານ.</p>
+      <p><strong>ການລຶບບັນຊີ:</strong> ທ່ານສາມາດລຶບບັນຊີ ແລະ ຂໍ້ມູນທີ່ກ່ຽວຂ້ອງທັງໝົດຢ່າງຖາວອນໂດຍກົງພາຍໃນແອັບໂດຍໄປທີ່ <em>ການຕັ້ງຄ່າ &gt; ບັນຊີ &gt; ລຶບບັນຊີ</em> ຫຼື ໂດຍຕິດຕໍ່ພວກເຮົາ.</p>
+
+      <h3>5. ຄວາມປອດໄພຂໍ້ມູນ ແລະ ຄວາມເປັນສ່ວນຕົວຂອງເດັກ</h3>
+      <p>ພວກເຮົາໃຊ້ມາດຕະການຄວາມປອດໄພດ້ານເທັກໂນໂລຊີທີ່ເປັນມາດຕະຖານຂອງອຸດສາຫະກຳ. ແອັບບໍ່ໄດ້ຕັ້ງໃຈສຳລັບເດັກທີ່ອາຍຸຕ່ຳກວ່າ 13 ປີ (ຫຼື 16 ປີໃນຂອບເຂດອຳນາດສານບາງແຫ່ງ). ພວກເຮົາບໍ່ເກັບກຳຂໍ້ມູນສ່ວນຕົວຈາກເດັກໂດຍຕັ້ງໃຈ.</p>
+
+      <h2>ເງື່ອນໄຂການບໍລິການ</h2>
+
+      <div class="highlight-box alert">
+        <strong>1. ການປະຕິເສດຄວາມຮັບຜິດຊອບທາງການແພດ (ສຳຄັນ)</strong><br>
+        TU — Mindful Companion ສະໜອງເຄື່ອງມືການນັ່ງສະມາທິ ແລະ ເນື້ອຫາສຸຂະພາບເພື່ອຈຸດປະສົງດ້ານການສຶກສາ ແລະ ຂໍ້ມູນຂ່າວສານເທົ່ານັ້ນ. ພວກເຮົາ<strong>ບໍ່ແມ່ນ</strong>ຜູ້ໃຫ້ບໍລິການດ້ານສຸຂະພາບ. ແອັບຂອງພວກເຮົາ<strong>ບໍ່ໄດ້</strong>ມີຈຸດປະສົງໃນການວິນິດໄສ, ປິ່ນປົວ ຫຼື ຮັກສາສຸຂະພາບຈິດ ຫຼື ພະຍາດທາງຮ່າງກາຍໃດ. ສຳລັບຄວາມກັງວົນທາງການແພດ ໃຫ້ຂໍຄຳປຶກສາຈາກຜູ້ຊ່ຽວຊານດ້ານສຸຂະພາບທີ່ມີຄຸນວຸດທິສະເໝີ.
+      </div>
+
+      <h3>2. ການສະໝັກ ແລະ ການຊຳລະເງິນ</h3>
+      <p>ຖ້າທ່ານຊື້ການສະໝັກ premium, ການເອີ້ນເກັບເງິນຖືກຈັດການຢ່າງປອດໄພຜ່ານ Apple App Store ຫຼື Google Play Store.</p>
+      <ul>
+        <li><strong>ການຕໍ່ອາຍຸອັດຕະໂນມັດ:</strong> ການສະໝັກຕໍ່ອາຍຸອັດຕະໂນມັດ ຍົກເວັ້ນຈະຍົກເລີກຢ່າງໜ້ອຍ 24 ຊົ່ວໂມງກ່ອນສິ້ນສຸດໄລຍະການເອີ້ນເກັບເງິນປັດຈຸບັນ.</li>
+        <li><strong>ການຄືນເງິນ:</strong> ຄຳຮ້ອງຂໍຄືນເງິນທັງໝົດຕ້ອງດຳເນີນການໂດຍກົງຜ່ານແພລດຟອມ App Store ທີ່ກ່ຽວຂ້ອງ ແລະ ຢູ່ໃນນະໂຍບາຍຂອງເຂົາເຈົ້າ.</li>
+      </ul>
+
+      <h3>3. ພຶດຕິກຳຜູ້ໃຊ້ ແລະ ເນື້ອຫາທີ່ບໍ່ເໝາະສົມ (ນະໂຍບາຍ UGC)</h3>
+      <p>ໂດຍການໃຊ້ແອັບ, ທ່ານຕົກລົງທີ່<strong>ຈະບໍ່</strong>ອັບໂຫລດເນື້ອຫາທີ່ຜິດກົດໝາຍ, ເປັນອັນຕະລາຍ, ດູຖູກ ຫຼື ລະເມີດລິຂະສິດ ແລະ ບໍ່ຄຸກຄາມ ຫຼື ລົບກວນຜູ້ໃຊ້ຄົນອື່ນ.</p>
+      <ul>
+        <li><strong>ຄວາມທົນທານສູນ:</strong> ພວກເຮົາປະຕິບັດນະໂຍບາຍທົນທານສູນຕໍ່ເນື້ອຫາທີ່ບໍ່ເໝາະສົມ ແລະ ການໃຊ້ແອັບໃນທາງທີ່ຜິດ.</li>
+        <li><strong>ລາຍງານ ແລະ ການບລັອກ:</strong> ຜູ້ໃຊ້ສາມາດໝາຍ/ລາຍງານເນື້ອຫາ ຫຼື ພຶດຕິກຳທີ່ບໍ່ເໝາະສົມ ແລະ ບລັອກຜູ້ໃຊ້ທີ່ລ່ວງລະເມີດໄດ້ໂດຍກົງຈາກພາຍໃນແອັບ.</li>
+        <li><strong>ການບັງຄັບໃຊ້:</strong> ພວກເຮົາຈະທົບທວນລາຍງານ ແລະ ສະງວນສິດໃນການລຶບເນື້ອຫາ ແລະ ປິດ/ຂັບໄລ່ຜູ້ໃຊ້ທີ່ລະເມີດເງື່ອນໄຂເຫຼົ່ານີ້ ພາຍໃນ 24 ຊົ່ວໂມງຫຼັງຈາກໄດ້ຮັບການລາຍງານ.</li>
+      </ul>
+
+      <h3>4. ການຈຳກັດຄວາມຮັບຜິດຊອບ</h3>
+      <p>ແອັບຖືກສະໜອງ "ຕາມທີ່ເປັນ" ແລະ "ຕາມທີ່ມີ". ໃນຂອບເຂດສູງສຸດທີ່ກົດໝາຍອະນຸຍາດ, ພວກເຮົາຈະບໍ່ຮັບຜິດຊອບຕໍ່ຄວາມເສຍຫາຍທາງອ້ອມ, ສ່ວນຕົນ ຫຼື ຜົນທີ່ຕາມມາ ທີ່ເກີດຂຶ້ນຈາກການໃຊ້ແອັບ.</p>
+
+      <h3>ຕິດຕໍ່ພວກເຮົາ</h3>
+      <p>ຖ້າທ່ານມີຄຳຖາມ ຫຼື ຄວາມກັງວົນກ່ຽວກັບນະໂຍບາຍເຫຼົ່ານີ້, ກະລຸນາຕິດຕໍ່ພວກເຮົາທີ່: <a href="mailto:breathe.in.out.on@gmail.com">breathe.in.out.on@gmail.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 TU — Mindful Companion. All rights reserved.</p>
+  </div>
+</div>
+
+<script>
+  function changeLanguage() {
+    const val = document.getElementById('languageSelect').value;
+    document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+    document.getElementById('lang-' + val).classList.add('active');
+  }
+</script>
+
+</body>
+</html>

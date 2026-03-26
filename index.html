@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu — Mindful Companion</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Cactus';
+            src: url('./CactusClassicalSerif-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --bg-primary: #f9f8f6;
+            --text-primary: #2a3b32;
+            --text-secondary: #5e6b63;
+            --accent: #4a5d4e;
+            --btn-bg: #2a3b32;
+            --btn-text: #ffffff;
+            --btn-hover: #3d5246;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: #e2e8d5;
+            top: -10%;
+            left: -10%;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: #f0e6d2;
+            bottom: 10%;
+            right: -5%;
+            animation-delay: -5s;
+        }
+
+        .content {
+            z-index: 1;
+            max-width: 600px;
+            animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .top-nav {
+            position: absolute;
+            top: 2.5rem;
+            left: 2.5rem;
+            right: 2.5rem;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-select {
+            appearance: none; background-color: transparent; border: 1px solid rgba(42, 59, 50, 0.2);
+            padding: 8px 35px 8px 15px; font-size: 0.9rem; color: var(--text-primary); border-radius: 20px; cursor: pointer; outline: none;
+            font-family: 'Inter', sans-serif;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232a3b32%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat; background-position: right 12px top 50%; background-size: 10px auto; transition: all 0.2s ease;
+        }
+
+        .nav-select:hover {
+            border-color: var(--accent);
+        }
+
+        .brand-lockup {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .tagline-row {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .dot-container {
+            position: relative;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: 20px; /* Lùi xa text ra một xíu */
+            transform: translateY(3px); /* Visually align dotted period with text baseline */
+        }
+
+        .breathe-dot {
+            width: 100%;
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 50%;
+            animation: breathe 4s infinite ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .aura-circle {
+            width: 360px; /* Lớn hơn bù lại */
+            height: 360px;
+            border: 1px solid rgba(42, 59, 50, 0.08);
+            box-shadow: inset 0 0 40px rgba(42, 59, 50, 0.02);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(42, 59, 50, 0.12);
+        }
+
+        .tu-title {
+            font-family: 'Cactus', serif;
+            font-size: 8rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 0.85;
+            margin-bottom: 1.5rem;
+        }
+
+        .tagline-text {
+            font-family: 'Cactus', serif;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            font-style: italic;
+            letter-spacing: 0.05em;
+            margin: 0;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(42, 59, 50, 0.15);
+        }
+
+        .btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 59, 50, 0.2);
+        }
+
+        .btn svg {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--btn-bg);
+            border: 1px solid var(--btn-bg);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            box-shadow: 0 4px 15px rgba(42, 59, 50, 0.15);
+        }
+
+        footer {
+            z-index: 1;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-top: 1px solid rgba(42, 59, 50, 0.1);
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(3.5); opacity: 0.1; }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+        }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            .tagline {
+                font-size: 1.25rem;
+            }
+
+            .store-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .top-nav {
+                top: 1.5rem;
+                left: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .app-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            footer {
+                flex-wrap: wrap;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <header class="top-nav">
+        <img src="./tuAppIconLight.png" alt="Tu App Icon" class="app-icon" />
+        <select id="languageSelect" class="nav-select" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+            <option value="th">ไทย</option>
+            <option value="my">မြန်မာ</option>
+            <option value="si">සිංහල</option>
+            <option value="km">ខ្មែរ</option>
+            <option value="ne">नेपाली</option>
+            <option value="lo">ລາວ</option>
+        </select>
+    </header>
+
+    <main class="hero">
+        <div class="content">
+            <div class="brand-lockup">
+                <h1 class="tu-title">Tu</h1>
+                <div class="tagline-row">
+                    <span class="tagline-text" data-lang="en">The breath is the anchor</span>
+                    <span class="tagline-text" data-lang="vi" style="display:none;">Hơi thở là điểm tựa</span>
+                    <span class="tagline-text" data-lang="de" style="display:none;">Der Atem ist der Anker</span>
+                    <span class="tagline-text" data-lang="fr" style="display:none;">Le souffle est l'ancre</span>
+                    <span class="tagline-text" data-lang="es" style="display:none;">La respiración es el ancla</span>
+                    <span class="tagline-text" data-lang="it" style="display:none;">Il respiro è l'ancora</span>
+                    <span class="tagline-text" data-lang="ja" style="display:none;">呼吸は心の拠り所</span>
+                    <span class="tagline-text" data-lang="ko" style="display:none;">호흡은 마음의 닻입니다</span>
+                    <span class="tagline-text" data-lang="zh" style="display:none;">呼吸是心灵的锚</span>
+                    <span class="tagline-text" data-lang="th" style="display:none;">ลมหายใจคือที่พึ่ง</span>
+                    <span class="tagline-text" data-lang="my" style="display:none;">အသက်ရှူခြင်းသည် ကျောက်ဆူးဖြစ်သည်</span>
+                    <span class="tagline-text" data-lang="si" style="display:none;">හුස්ම යනු නැංගුරමයි</span>
+                    <span class="tagline-text" data-lang="km" style="display:none;">ដង្ហើមគឺជាយុថ្កា</span>
+                    <span class="tagline-text" data-lang="ne" style="display:none;">श्वास नै लङ्गर हो</span>
+                    <span class="tagline-text" data-lang="lo" style="display:none;">ລົມຫາຍໃຈຄືສະໝໍ</span>
+                    <div class="dot-container">
+                        <div class="aura-circle"></div>
+                        <div class="breathe-dot"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="description" data-lang="en">A minimalist digital space to bring you back to the present moment. Find stillness in a noisy world.</p>
+            <p class="description" data-lang="vi" style="display:none;">Một không gian kỹ thuật số tối giản giúp bạn trở về với hiện tại. Tìm thấy sự tĩnh lặng giữa thế giới ồn ào.</p>
+            <p class="description" data-lang="de" style="display:none;">Ein minimalistischer digitaler Raum, der Sie in den gegenwärtigen Moment zurückbringt. Finden Sie Stille in einer lauten Welt.</p>
+            <p class="description" data-lang="fr" style="display:none;">Un espace numérique minimaliste pour vous ramener à l'instant présent. Trouvez le silence dans un monde bruyant.</p>
+            <p class="description" data-lang="es" style="display:none;">Un espacio digital minimalista para traerte de vuelta al momento presente. Encuentra la quietud en un mundo ruidoso.</p>
+            <p class="description" data-lang="it" style="display:none;">Uno spazio digitale minimalista per riportarti al momento presente. Trova la quiete in un mondo rumoroso.</p>
+            <p class="description" data-lang="ja" style="display:none;">今この瞬間に戻るためのミニマルなデジタル空間。ノイズの多い世界で静けさを見つけましょう。</p>
+            <p class="description" data-lang="ko" style="display:none;">현재의 순간으로 되돌려주는 미니멀한 디지털 공간. 소음이 많은 세상에서 고요함을 찾으세요.</p>
+            <p class="description" data-lang="zh" style="display:none;">一个极简的数字空间，带您回到当下。在喧嚣的世界中寻找宁静。</p>
+            <p class="description" data-lang="th" style="display:none;">พื้นที่ดิจิทัลแนวมินิมอลที่จะพาคุณกลับมาอยู่กับปัจจุบัน ค้นพบความสงบในโลกที่วุ่นวาย</p>
+            <p class="description" data-lang="my" style="display:none;">သင့်ကို ပစ္စုပ္ပန်အချိန်သို့ ပြန်လည်ရောက်ရှိစေမည့် ရိုးရှင်းသော ဒစ်ဂျစ်တယ်နေရာတစ်ခု။ ဆူညံသောကမ္ဘာတွင် တိတ်ဆိတ်မှုကို ရှာဖွေပါ။</p>
+            <p class="description" data-lang="si" style="display:none;">ඔබව වර්තමානයට ගෙන ඒම සඳහා නිර්මාණය කළ අවම ඩිජිටල් අවකාශයක්. ඝෝෂාකාරී ලොවක නිශ්ශබ්දතාව සොයාගන්න.</p>
+            <p class="description" data-lang="km" style="display:none;">កន្លែងឌីជីថលដ៏សាមញ្ញមួយ ដើម្បីនាំអ្នកត្រលប់មកកាន់ពេលវេលាបច្ចុប្បន្នវិញ។ ស្វែងរកភាពស្ងប់ស្ងាត់នៅក្នុងពិភពលោកដ៏អ៊ូអរ។</p>
+            <p class="description" data-lang="ne" style="display:none;">तपाईंलाई वर्तमान क्षणमा फर्काउने एक न्यूनतम डिजिटल ठाउँ। कोलाहलमय संसारमा शान्ति खोज्नुहोस्।</p>
+            <p class="description" data-lang="lo" style="display:none;">ພື້ນທີ່ດິຈິຕອລທີ່ລຽບງ່າຍເພື່ອນຳພາທ່ານກັບສູ່ປັດຈຸບັນ. ຄົ້ນພົບຄວາມສະຫງົບໃນໂລກທີ່ວຸ້ນວາຍ.</p>
+
+            <div class="store-buttons">
+                <!-- Apple icon -->
+                <a href="https://apps.apple.com/app/tu/id6760178071" class="btn" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg viewBox="0 0 384 512">
+                        <path
+                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+                    </svg>
+                    App Store
+                </a>
+                <!-- Play Store icon -->
+                <a href="https://play.google.com/store/apps/details?id=com.thorahitvaonao.app.tu"
+                    class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 512 512">
+                        <path
+                            d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
+                    </svg>
+                    Google Play
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html" data-lang="vi" style="display:none;">Trang chủ</a>
+            <a href="index.html" data-lang="de" style="display:none;">Startseite</a>
+            <a href="index.html" data-lang="fr" style="display:none;">Accueil</a>
+            <a href="index.html" data-lang="es" style="display:none;">Inicio</a>
+            <a href="index.html" data-lang="it" style="display:none;">Home</a>
+            <a href="index.html" data-lang="ja" style="display:none;">ホーム</a>
+            <a href="index.html" data-lang="ko" style="display:none;">홈</a>
+            <a href="index.html" data-lang="zh" style="display:none;">首页</a>
+            <a href="index.html" data-lang="th" style="display:none;">หน้าแรก</a>
+            <a href="index.html" data-lang="my" style="display:none;">ပင်မစာမျက်နှာ</a>
+            <a href="index.html" data-lang="si" style="display:none;">මුල් පිටුව</a>
+            <a href="index.html" data-lang="km" style="display:none;">ទំព័រដើម</a>
+            <a href="index.html" data-lang="ne" style="display:none;">गृहपृष्ठ</a>
+            <a href="index.html" data-lang="lo" style="display:none;">ໜ້າທຳອິດ</a>
+            
+            <a href="tu_privacy_policy-4.html" data-lang="en">Privacy Policy & Terms</a>
+            <a href="tu_privacy_policy-4.html" data-lang="vi" style="display:none;">Bảo mật & Điều khoản</a>
+            <a href="tu_privacy_policy-4.html" data-lang="de" style="display:none;">Datenschutz & Nutzungsbedingungen</a>
+            <a href="tu_privacy_policy-4.html" data-lang="fr" style="display:none;">Confidentialité et CGU</a>
+            <a href="tu_privacy_policy-4.html" data-lang="es" style="display:none;">Privacidad y Términos</a>
+            <a href="tu_privacy_policy-4.html" data-lang="it" style="display:none;">Privacy e Termini</a>
+            <a href="tu_privacy_policy-4.html" data-lang="ja" style="display:none;">プライバシーと利用規約</a>
+            <a href="tu_privacy_policy-4.html" data-lang="ko" style="display:none;">개인정보 처리방침 및 약관</a>
+            <a href="tu_privacy_policy-4.html" data-lang="zh" style="display:none;">隐私政策与条款</a>
+            <a href="tu_privacy_policy-4.html" data-lang="th" style="display:none;">นโยบายและความเป็นส่วนตัว</a>
+            <a href="tu_privacy_policy-4.html" data-lang="my" style="display:none;">ကိုယ်ရေးအချက်အလက်မူဝါဒနှင့် စည်းကမ်းချက်များ</a>
+            <a href="tu_privacy_policy-4.html" data-lang="si" style="display:none;">රහස්‍යතා ප්‍රතිපත්තිය සහ නියමයන්</a>
+            <a href="tu_privacy_policy-4.html" data-lang="km" style="display:none;">គោលការណ៍ឯកជនភាព និងលក្ខខណ្ឌ</a>
+            <a href="tu_privacy_policy-4.html" data-lang="ne" style="display:none;">गोपनीयता नीति र सर्तहरू</a>
+            <a href="tu_privacy_policy-4.html" data-lang="lo" style="display:none;">ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ ແລະ ເງື່ອນໄຂ</a>
+            
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="en">Contact Support</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="vi" style="display:none;">Liên hệ Hỗ trợ</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="de" style="display:none;">Support kontaktieren</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="fr" style="display:none;">Contacter le support</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="es" style="display:none;">Contactar soporte</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="it" style="display:none;">Contatta il supporto</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="ja" style="display:none;">サポート</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="ko" style="display:none;">지원</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="zh" style="display:none;">联系支持</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="th" style="display:none;">ติดต่อฝ่ายสนับสนุน</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="my" style="display:none;">အကူအညီရယူရန်</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="si" style="display:none;">සහාය අමතන්න</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="km" style="display:none;">ទាក់ទងផ្នែកជំនួយ</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="ne" style="display:none;">समर्थन सम्पर्क गर्नुहोस्</a>
+            <a href="mailto:breathe.in.out.on@gmail.com" data-lang="lo" style="display:none;">ຕິດຕໍ່ຝ່າຍຊ່ວຍເຫຼືອ</a>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage() {
+            const val = document.getElementById('languageSelect').value;
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                if (el.getAttribute('data-lang') === val) {
+                    el.style.display = '';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+            localStorage.setItem('tu_lang', val);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let savedLang = localStorage.getItem('tu_lang') || 'en';
+            let select = document.getElementById('languageSelect');
+            if (select) {
+                select.value = savedLang;
+                changeLanguage();
+            }
+        });
+    </script>
+</body>
+
+</html>
